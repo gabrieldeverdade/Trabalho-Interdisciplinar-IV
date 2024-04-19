@@ -39878,6 +39878,8 @@ GameObject:
   - component: {fileID: 629506805}
   - component: {fileID: 629506807}
   - component: {fileID: 629506806}
+  - component: {fileID: 629506808}
+  - component: {fileID: 629506809}
   m_Layer: 0
   m_Name: Mosquitoes
   m_TagString: Untagged
@@ -39973,6 +39975,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &629506808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629506804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410836963d2896344863ce5aa0881e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+--- !u!114 &629506809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629506804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886ed8caa0b407440832c90408b9c33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
 --- !u!1 &837831407
 GameObject:
   m_ObjectHideFlags: 0
@@ -40417,6 +40445,8 @@ GameObject:
   - component: {fileID: 1303199161}
   - component: {fileID: 1303199164}
   - component: {fileID: 1303199165}
+  - component: {fileID: 1303199167}
+  - component: {fileID: 1303199166}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -40554,7 +40584,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581a460e5547ce844af202bdee611e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomMultiplier: 2
   cam: {fileID: 1303199162}
+--- !u!114 &1303199166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303199160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581a460e5547ce844af202bdee611e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomMultiplier: 4
+  cam: {fileID: 0}
+--- !u!114 &1303199167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303199160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be10448cbb672ca498afc6b10e9476ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 838795902}
 --- !u!1 &1348375745
 GameObject:
   m_ObjectHideFlags: 0
@@ -40805,6 +40863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780627003}
   - component: {fileID: 1780627004}
+  - component: {fileID: 1780627005}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -40879,6 +40938,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1780627005
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780627002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e045eb186e6b3c44a46c223a974f0bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2074812421
 GameObject:
   m_ObjectHideFlags: 0

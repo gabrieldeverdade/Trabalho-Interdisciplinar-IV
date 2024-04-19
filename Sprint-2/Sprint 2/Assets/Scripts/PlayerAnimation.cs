@@ -29,8 +29,7 @@ public class PlayerAnimation : MonoBehaviour
 	public void SetDirection(Vector2 direction)
 	{
 		var directionArray = direction.magnitude < 0.01 ? "Static" : "Run";
-		Debug.Log($"{directionArray} {GetDirection(direction)}");
-		animator.Play($"{directionArray} {GetDirection(direction)}");
+		animator.Play($"{directionArray} SE");
 	}
 
 	string GetDirection(Vector2 direction)
