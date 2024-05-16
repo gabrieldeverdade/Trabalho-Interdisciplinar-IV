@@ -692,6 +692,7 @@ MonoBehaviour:
   TimeToSpawn: 5
   Enemies: []
   EnemyPrefab: {fileID: 5578098396751996302, guid: 62bcfc6be1d6fd44a825b152270f0065, type: 3}
+  RandomWalkEnemyPrefab: {fileID: 5578098396751996302, guid: f8695021db656d64c8eafb99215945f3, type: 3}
   Destination: {fileID: 1534827433}
 --- !u!1 &2113065897
 GameObject:

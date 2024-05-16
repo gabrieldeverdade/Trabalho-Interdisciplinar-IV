@@ -3,11 +3,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class MapManager : MonoBehaviour
+public class MapManager : SingletonMonoBehaviour<MapManager>
 {
-	private static MapManager _instance;
-	public static MapManager Instance { get { return _instance; } }
-
 	public string GrassTile;
 	public bool ignoreBottomTiles;
 	public int MapJumpHeight = 1;
@@ -22,18 +19,6 @@ public class MapManager : MonoBehaviour
 	public Resource WaterResource;
 	public Resource GrassResource;
 
-	private void Awake()
-	{
-		if (_instance != null && _instance != this)
-		{
-			Destroy(this.gameObject);
-		}
-		else
-		{
-			_instance = this;
-		}
-	}
-
 	private void Start()
 	{
 		BuildTilemapContainer(gameObject.GetComponentInChildren<Tilemap>());
@@ -44,7 +29,7 @@ public class MapManager : MonoBehaviour
 		if (!Paths.ContainsKey(character))
 				Paths.Add(character, new List<BaseTile>());
 
-		ClearPath();
+		//ClearPath();
 		Paths[character] = path;
 		AfterPathUpdate(path);
 	}

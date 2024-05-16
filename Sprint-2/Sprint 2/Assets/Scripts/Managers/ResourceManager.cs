@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ResourceManager : MonoBehaviour
+public class ResourceManager : SingletonMonoBehaviour<ResourceManager>
 {
 	public string Name;
 	public string Description;

@@ -1,4 +1,4 @@
-public class SpawnManager
+public class SpawnManager: SingletonMonoBehaviour<SpawnManager>
 {
 
 }

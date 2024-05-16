@@ -1,4 +1,4 @@
-public class EnemyManager
+public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 {
 
 }

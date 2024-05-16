@@ -1,33 +1,18 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ClockManager: MonoBehaviour
+public class ClockManager: SingletonMonoBehaviour<ClockManager>
 {
-	private static ClockManager _instance;
-	public static ClockManager Instance { get { return _instance; } }
-
-	public int ClockTime = 0;
 	Text ClockText;
-
-	private void Awake()
-	{
-		if (_instance != null && _instance != this)
-		{
-			Destroy(this.gameObject);
-		}
-		else
-		{
-			_instance = this;
-		}
-
-		ClockText = GetComponentInChildren<Text>();
-	}
+	public int ClockTime = 0;
+	public static UnityEvent OnChange;
 
 	void Start()
 	{
 		StartCoroutine(TimerRoutine());
+		OnChange = new UnityEvent();
 	}
 
 	IEnumerator TimerRoutine()
@@ -36,22 +21,17 @@ public class ClockManager: MonoBehaviour
 		while (true)
 		{
 			ClockTime += 1;
-			OnClockChange();
+			OnChange.Invoke();
 			yield return delay;
 		}
 	}
-
-	void OnClockChange()
-	{
-	}
-
-	private void Update()
+	
+	void Update()
 	{
 		string second = LeadingZero(ClockTime % 60);
 		string minute = LeadingZero(ClockTime / 60);
 		ClockText.text = minute + ":" + second;
 	}
-
 
 	string LeadingZero(int n) => n.ToString().PadLeft(2, '0');
 }

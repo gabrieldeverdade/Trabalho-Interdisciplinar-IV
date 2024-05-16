@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StalkController : MonoBehaviour
 {
@@ -19,17 +20,16 @@ public class StalkController : MonoBehaviour
 
 	List<BaseTile> Path => Character != null && MapManager.Instance.Paths.ContainsKey(Character) ? MapManager.Instance.Paths[Character] : new List<BaseTile>();
 
-	private void Start()
+
+	void Start()
 	{
 		PathFinder = new PathFinder(false);
-		//StartCoroutine(ChangePaths());
 	}
 
 	void LateUpdate()
 	{
 		if(Character.ActiveTile == null)
 			Character.ActiveTile = MapManager.Instance.Map[new Vector2Int(StartPositionX, StartPositionY)];
-
 		ChangePaths();
 		if (Character != null)
 		{
@@ -43,23 +43,24 @@ public class StalkController : MonoBehaviour
 
 	void ChangePaths()
 	{
-		
+		var range = 3;
 		if (Latest != Destination.ActiveTile)
 		{
-			if(Latest == null) 
+			if(Latest == null || Path.Count <= 3) 
 			{
-				var newPath = PathFinder.Find(Character.ActiveTile, Destination.ActiveTile, range: 20);
+				var newPath = PathFinder.Find(Character.ActiveTile, Destination.ActiveTile, range: 10);
 				MapManager.Instance.UpdatePath(Character, newPath);
 			}
 			else
 			{
-				var newTile = PathFinder.Find(Latest, Destination.ActiveTile, range: 1);
 				var newPath = Path ?? new List<BaseTile>();
 
-				if (newTile.Count == 0)
-					newPath.RemoveAt(Path.Count - 1);
-				else
-					newPath.AddRange(newTile);
+				if(newPath.Count > range) newPath.RemoveRange(newPath.Count - range, range);
+
+				var latestTile = newPath[newPath.Count - 1];
+				var newTile = PathFinder.Find(latestTile, Destination.ActiveTile, range+1);
+				
+				newPath.AddRange(newTile);
 
 				MapManager.Instance.UpdatePath(Character, newPath);
 			}

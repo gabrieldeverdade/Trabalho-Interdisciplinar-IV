@@ -13,6 +13,7 @@ public class SpawnArea: MonoBehaviour
 
 	[SerializeField] List<Character> Enemies;
 	[SerializeField] Character EnemyPrefab;
+	[SerializeField] Character RandomWalkEnemyPrefab;
 	[SerializeField] Character Destination;
 
 	void Start()
@@ -24,7 +25,11 @@ public class SpawnArea: MonoBehaviour
 		if(Tile == null)
 		{
 			Tile = MapManager.Instance.Map[new Vector2Int(SpawnX, SpawnY)];
-			Spawn();
+			for(int i = 0; i < 2; i++)
+				Spawn();
+
+			for (int i = 0; i < 2; i++)
+				SpawnRandomWalk();
 		}
 	}
 
@@ -33,6 +38,13 @@ public class SpawnArea: MonoBehaviour
 		var newChar = Instantiate(EnemyPrefab);
 		newChar.GetComponent<StalkController>().SetDestination(Destination);
 		newChar.GetComponent<StalkController>().SetStartPosition(SpawnX, SpawnY);
+		Enemies.Add(newChar);
+	}
+
+	void SpawnRandomWalk()
+	{
+		var newChar = Instantiate(RandomWalkEnemyPrefab);
+		newChar.GetComponent<RandomMoveController>().SetStartPosition(SpawnX, SpawnY);
 		Enemies.Add(newChar);
 	}
 }
