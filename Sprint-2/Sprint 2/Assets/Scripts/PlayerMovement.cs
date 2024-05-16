@@ -14,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 
+	public void OnCollisionEnter2D(Collision2D collision)
+	{
+		Debug.Log("COLLIDED");
+	}
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
