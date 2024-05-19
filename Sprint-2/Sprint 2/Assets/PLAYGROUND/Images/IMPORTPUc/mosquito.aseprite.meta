@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: 65b79ac7b9b7f8e4aba262f93d51fee7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: mosquito_Frame_0
+    originalName: 
+    pivot: {x: 1.0172414, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 82
+      width: 29
+      height: 32
+    spriteID: b8ab9813746b7b142913d1ab3abedd8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 82}
+  - name: mosquito_Frame_1
+    originalName: 
+    pivot: {x: 1.0172414, y: -0.48387095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 200
+      width: 29
+      height: 31
+    spriteID: 7cd6c70958a4d544988c863af094fae1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 200}
+  - name: mosquito_Frame_2
+    originalName: 
+    pivot: {x: 1.0172414, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 122
+      width: 29
+      height: 32
+    spriteID: 9539bda449bde474cb7fe3723968f317
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 122}
+  - name: mosquito_Frame_3
+    originalName: 
+    pivot: {x: 1.016129, y: -0.5833333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 4
+      width: 31
+      height: 24
+    spriteID: 3ddd51fec3e106b47a2e865c4a91f4e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 4}
+  - name: mosquito_Frame_4
+    originalName: 
+    pivot: {x: 1.016129, y: -0.65217394}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 68
+      width: 31
+      height: 23
+    spriteID: d9da5e827bdf7f54b80060a6d2659c24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 68}
+  - name: mosquito_Frame_5
+    originalName: 
+    pivot: {x: 1.016129, y: -0.5833333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 36
+      width: 31
+      height: 24
+    spriteID: 3af1c8047a9829548a18265e6444c27d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 36}
+  - name: mosquito_Frame_6
+    originalName: 
+    pivot: {x: 1.0166667, y: -0.4516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 30
+      height: 31
+    spriteID: c694125b7f4710a49a346e5a68a32cc6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: mosquito_Frame_7
+    originalName: 
+    pivot: {x: 1.0166667, y: -0.49999997}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 162
+      width: 30
+      height: 30
+    spriteID: cb6f976985a326344bc11f910aae1d81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 162}
+  - name: mosquito_Frame_8
+    originalName: 
+    pivot: {x: 1.0166667, y: -0.4516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 43
+      width: 30
+      height: 31
+    spriteID: 33eb90115e304cb4a8f4748e00af0861
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 43}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 53085519
+    name: mosquito
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: mosquito_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 34
+        y: 14
+        width: 29
+        height: 32
+      spriteId: b8ab9813746b7b142913d1ab3abedd8a
+    - name: mosquito_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 34
+        y: 15
+        width: 29
+        height: 31
+      spriteId: 7cd6c70958a4d544988c863af094fae1
+    - name: mosquito_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 34
+        y: 14
+        width: 29
+        height: 32
+      spriteId: 9539bda449bde474cb7fe3723968f317
+    - name: mosquito_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 32
+        y: 14
+        width: 31
+        height: 24
+      spriteId: 3ddd51fec3e106b47a2e865c4a91f4e7
+    - name: mosquito_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 32
+        y: 15
+        width: 31
+        height: 23
+      spriteId: d9da5e827bdf7f54b80060a6d2659c24
+    - name: mosquito_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 32
+        y: 14
+        width: 31
+        height: 24
+      spriteId: 3af1c8047a9829548a18265e6444c27d
+    - name: mosquito_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 33
+        y: 14
+        width: 30
+        height: 31
+      spriteId: c694125b7f4710a49a346e5a68a32cc6
+    - name: mosquito_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 33
+        y: 15
+        width: 30
+        height: 30
+      spriteId: cb6f976985a326344bc11f910aae1d81
+    - name: mosquito_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 33
+        y: 14
+        width: 30
+        height: 31
+      spriteId: 33eb90115e304cb4a8f4748e00af0861
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 127, y: 62}

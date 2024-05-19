@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03cd7096f4f296549b1d6ac2a5a1e6bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f8910ba0c3555849a0282e869a46309, type: 3}
   m_Name: Resource_Water
   m_EditorClassIdentifier: 
   Name: Water
-  Description: Um quadrado de agua
-  Tile: {fileID: 11400000, guid: 9544e71e3872f0e43b8413bad3a0eaba, type: 2}
-  Amount: 1000
+  Description: "\xC1gua para que os mosquitos consigam utilizar"
+  Tile: {fileID: 11400000, guid: 2c7ca50555b8fe64890432883c3890df, type: 2}
+  Amount: 10000
+  OnTopOfGround: 1

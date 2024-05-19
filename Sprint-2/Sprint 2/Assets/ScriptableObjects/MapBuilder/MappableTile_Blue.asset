@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29983a7bdbd376b46b1940cd8c7301cb, type: 3}
+  m_Name: MappableTile_Blue
+  m_EditorClassIdentifier: 
+  Name: Walkable Tile
+  Tile: {fileID: 11400000, guid: 1d25ae082f10d3849a1209d4bc7f2d5f, type: 2}
+  Walkable: 1
+  Flyable: 1
+  Resourceable: 0
+  ValidTiles:
+  - {fileID: 11400000, guid: 9361f17ec4176f3409b499769160b586, type: 2}
+  - {fileID: 11400000, guid: e803f160ab5777b42a61678627b0f5bc, type: 2}
+  - {fileID: 11400000, guid: 558f51b579fb473449259cf4df025c18, type: 2}
+  - {fileID: 11400000, guid: af6a600ba74584f429a3661cdadc4c1a, type: 2}
+  - {fileID: 11400000, guid: 4646751ca20d9d44bbe4018b21fd9fd4, type: 2}
+  - {fileID: 11400000, guid: b1524db65a71de54db2e42b6b66e0890, type: 2}
+  - {fileID: 11400000, guid: a95c2c37f795cb744b3b1e51b593f952, type: 2}
+  - {fileID: 11400000, guid: 27ad9f9e3e1aff54aa4ddc381c7d5966, type: 2}
+  - {fileID: 11400000, guid: a5c699cf9f1ce7342a00af6abd13c792, type: 2}
+  - {fileID: 11400000, guid: af82a635cd31e6148a94dae544ccc07d, type: 2}
+  - {fileID: 11400000, guid: 5f38a5a8ee0d5ab4ca27e2d888b2be00, type: 2}

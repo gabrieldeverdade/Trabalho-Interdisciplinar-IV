@@ -11,8 +11,8 @@ public class ClockManager: SingletonMonoBehaviour<ClockManager>
 
 	void Start()
 	{
+		ClockText = GetComponentInChildren<Text>();
 		StartCoroutine(TimerRoutine());
-		OnChange = new UnityEvent();
 	}
 
 	IEnumerator TimerRoutine()
@@ -21,7 +21,6 @@ public class ClockManager: SingletonMonoBehaviour<ClockManager>
 		while (true)
 		{
 			ClockTime += 1;
-			OnChange.Invoke();
 			yield return delay;
 		}
 	}

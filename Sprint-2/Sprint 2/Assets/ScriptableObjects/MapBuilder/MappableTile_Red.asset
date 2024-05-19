@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29983a7bdbd376b46b1940cd8c7301cb, type: 3}
+  m_Name: MappableTile_Red
+  m_EditorClassIdentifier: 
+  Name: Block Tile
+  Tile: {fileID: 11400000, guid: cb2bf295390279d49be6491f69065e59, type: 2}
+  Walkable: 0
+  Flyable: 0
+  Resourceable: 0
+  OnTopOfGround: 1
+  ValidTiles:
+  - {fileID: 11400000, guid: 890e65ad7b4ce5249a948a688160f110, type: 2}

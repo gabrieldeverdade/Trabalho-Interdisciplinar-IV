@@ -1,111 +1,92 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class KeyboardController : MonoBehaviour
+public class KeyboardController : BaseController
 {
-	public float Speed = 10;
+	public float Speed = 5;
+	public Direction LatestDirection = Direction.S;
 
-	bool IsMoving = false;
 	[SerializeField] Character Character;
 	[SerializeField] int StartPositionX;
 	[SerializeField] int StartPositionY;
-
-	List<BaseTile> Path = new();
-	PathFinder PathFinder;
+	PlayerAnimation PlayerAnimation;
 
 	private void Start()
 	{
-		PathFinder = new PathFinder(true);
+		PlayerAnimation = Character.GetComponent<PlayerAnimation>();
 	}
 
-	// Update is called once per frame
-	void LateUpdate()
+	private void Update()
 	{
-		if (!IsMoving)
+		if(Character.ActiveTile == null)
 		{
-			if(Character.ActiveTile == null)
-				Character.ActiveTile = MapManager.Instance.Map[new Vector2Int(StartPositionX, StartPositionY)];
-
-			if (Input.GetKey("d"))
-			{
-				if (Character.ActiveTile.HasSouthNeighbour(MapManager.Instance.Map, out var found))
-				{
-					Path = PathFinder.Find(Character.ActiveTile, found);
-					IsMoving = true;
-				}
-			}
-
-			if (Input.GetKey("w"))
-			{
-				if (Character.ActiveTile.HasEastNeighbour(MapManager.Instance.Map, out var found))
-				{
-					Path = PathFinder.Find(Character.ActiveTile, found);
-					IsMoving = true;
-				}
-			}
-
-			if (Input.GetKey("s"))
-			{
-				if (Character.ActiveTile.HasWestNeighbour(MapManager.Instance.Map, out var found))
-				{
-					Path = PathFinder.Find(Character.ActiveTile, found);
-					IsMoving = true;
-				}
-			}
-
-			if (Input.GetKey("a"))
-			{
-				if (Character.ActiveTile.HasNorthNeighbour(MapManager.Instance.Map, out var found))
-				{
-					Path = PathFinder.Find(Character.ActiveTile, found);
-					IsMoving = true;
-				}
-			}
+			Character.ActiveTile = MapManager.Instance.Map[new Vector2Int(StartPositionX, StartPositionY)];
+			PlayerAnimation.Play("IdleBottom");
 		}
-
-
-		if (Input.GetKey("g"))
-		{
-			foreach (var tile in MapManager.Instance.Map)
-				tile.Value.ShowTile();
-		}
-
-		if (Input.GetKey("h"))
-		{
-			foreach (var tile in MapManager.Instance.Map)
-				tile.Value.HideTile();
-		}
-
-
-		if (Path.Count > 0 && IsMoving)
-			MoveAlongPath();
-
-		if (Path.Count == 0)
-			IsMoving = false;
 	}
 
-	void MoveAlongPath()
+	void FixedUpdate()
 	{
-		var step = 2 * Time.deltaTime;
-		var firstPosition = Path[0].transform.position;
-		var z = firstPosition.z;
+		var horizontal = Input.GetAxis("Horizontal") * Speed;
+		var vertical = Input.GetAxis("Vertical") * (Speed - 1);
 
-		Character.transform.position = Vector2.MoveTowards(Character.transform.position, firstPosition, step);
-		Character.transform.position = new Vector3(Character.transform.position.x, Character.transform.position.y, z);
-
-		if (Vector2.Distance(Character.transform.position, firstPosition) < 0.0001f)
-		{
-			PositionCharacterOnTile(Path[0]);
-			Path.RemoveAt(0);
-		}
+		Walk(new Vector2((int)horizontal, (int)vertical));
 	}
 
-	private void PositionCharacterOnTile(BaseTile overlayTyle)
+	Direction GetDirection(Vector2 direction)
 	{
-		Character.transform.position = new Vector3(overlayTyle.transform.position.x, overlayTyle.transform.position.y+0.00002f, overlayTyle.transform.position.z);
-		Character.GetComponentInChildren<SpriteRenderer>().transform.position = new Vector3(overlayTyle.transform.position.x, overlayTyle.transform.position.y+0.23f+0.00002f, overlayTyle.transform.position.z);
-		Character.GetComponentInChildren<SpriteRenderer>().sortingOrder = overlayTyle.GetComponent<SpriteRenderer>().sortingOrder;
+		float step = 360 / 8;
+		float offset = step / 2;
+		float angle = Vector2.SignedAngle(Vector2.up, direction.normalized);
 
-		Character.ActiveTile = overlayTyle;
+		angle += offset;
+		if (angle < 0) angle += 360;
+
+		float stepCount = angle / step;
+
+		return (Direction)Enum.ToObject(typeof(Direction), Mathf.FloorToInt(stepCount));
 	}
+
+	void Walk(Vector2 direction)
+	{
+		Character.GetComponent<Rigidbody2D>().velocity = direction;
+
+		var latestDirection = GetDirection(direction);
+
+		if ((direction.magnitude/Speed) > 0.5)
+			LatestDirection = latestDirection;
+
+		PlayerAnimation.Play(
+			direction.magnitude < 0.001 
+			? GetIdleAnimation(LatestDirection)
+			: GetWalkAnimation(latestDirection)
+		);
+
+	}
+
+	string GetWalkAnimation(Direction direction) => direction switch
+	{
+		Direction.N => "WalkUp",
+		Direction.NW => "WalkUpLeft",
+		Direction.NE => "WalkUpRight",
+		Direction.S => "WalkBottom",
+		Direction.SE => "WalkBottomRight",
+		Direction.SW => "WalkBottomLeft",
+		Direction.E => "WalkRight",
+		Direction.W => "WalkLeft",
+		_ => "IdleBottom"
+	};
+
+	string GetIdleAnimation(Direction direction) => direction switch
+	{
+		Direction.N => "IdleUp",
+		Direction.NW => "IdleUpLeft",
+		Direction.NE => "IdleUpRight",
+		Direction.S => "IdleBottom",
+		Direction.SE => "IdleBottomRight",
+		Direction.SW => "IdleBottomLeft",
+		Direction.E => "IdleRight",
+		Direction.W => "IdleLeft",
+		_ => "IdleBottom"
+	};
 }

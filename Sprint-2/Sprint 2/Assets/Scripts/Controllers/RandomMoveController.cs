@@ -1,49 +1,47 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class RandomMoveController : MonoBehaviour
+public class RandomMoveController : BaseController
 {
 	public float Speed = 5;
 	public int Range = 5;
 
-	bool IsMoving = false;
-	[SerializeField] Character Character;
+	Character Character;
 
 	[SerializeField] int StartPositionX;
 	[SerializeField] int StartPositionY;
 
-	BaseTile Latest;
-	PathFinder PathFinder;
 	List<BaseTile> Path => Character != null && MapManager.Instance.Paths.ContainsKey(Character) ? MapManager.Instance.Paths[Character] : new List<BaseTile>();
 
 	void Start()
 	{
-		PathFinder = new PathFinder(false);
+		StartCoroutine(ChangePaths());
+		Character = GetComponent<Character>();
 	}
 
-	void LateUpdate()
+	public void LateUpdate()
 	{
+		if (Character == null) return;
+
 		if(Character.ActiveTile == null)
 			Character.ActiveTile = MapManager.Instance.Map[new Vector2Int(StartPositionX, StartPositionY)];
 
-		ChangePaths();
-
-		if (Character != null)
-		{
-			if (Path.Count > 0)
-				MoveAlongPath();
-
-			if (Path.Count == 0)
-				IsMoving = false;
-		}
+		if (Character != null && Path.Count > 0)
+			MoveAlongPath();
 	}
 
-	void ChangePaths()
+	IEnumerator ChangePaths()
 	{
-		if (Path.Count == 0)
+		var delay = new WaitForSeconds(1);
+		while (true)
 		{
-			var randomTile = Random.Range(0, 4);
-			var tile = Character.ActiveTile.GetNeightbourTiles(new List<BaseTile>())[randomTile];
-			MapManager.Instance.UpdatePath(Character, new List<BaseTile> { tile });
+			if (Path.Count == 0 && Character != null && Character.ActiveTile != null)
+			{
+				var randomTile = Random.Range(0, 4);
+				var tile = Character.ActiveTile.GetNeightbourTiles(new List<BaseTile>())[randomTile];
+				MapManager.Instance.UpdatePath(Character, new List<BaseTile> { tile });
+			}
+			yield return delay;
 		}
 	}
 

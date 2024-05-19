@@ -28,22 +28,24 @@ public abstract class BaseTile : MonoBehaviour
 	public void ShowTile()
 	{
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-		if (ShowPathAmount)
-		{
-			GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
-			GetComponentInChildren<TextMeshPro>().text = $"{UsingPath}/{TotalAmount}";
-		}
+		//if (ShowPathAmount)
+		//{
+		//	GetComponentInChildren<TextMeshPro>().enabled = false;
+		//	GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
+		//	GetComponentInChildren<TextMeshPro>().text = $"{UsingPath}/{TotalAmount}";
+		//}
 	}
 
 	public void HideTile()
 	{
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-		if (ShowPathAmount)
-		{
-			GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
-			GetComponentInChildren<TextMeshPro>().text = $"0/{TotalAmount}";
-			SetArrowSprite(ArrowDirection.None);
-		}
+		//if (ShowPathAmount)
+		//{
+		//	GetComponentInChildren<TextMeshPro>().enabled = true;
+		//	GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
+		//	GetComponentInChildren<TextMeshPro>().text = $"0/{TotalAmount}";
+		//	SetArrowSprite(ArrowDirection.None);
+		//}
 	}
 
 	public void SetArrowSprite(ArrowDirection d)
@@ -68,8 +70,18 @@ public abstract class BaseTile : MonoBehaviour
 
 		if (HasNorthNeighbour(map, out found))
 			neighbours.Add(found);
+		if (HasNorthEastNeighbour(map, out found))
+			neighbours.Add(found);
+		if (HasNorthWestNeighbour(map, out found))
+			neighbours.Add(found);
+
 		if (HasSouthNeighbour(map, out found))
 			neighbours.Add(found);
+		if (HasSouthEastNeighbour(map, out found))
+			neighbours.Add(found);
+		if (HasSouthWestNeighbour(map, out found))
+			neighbours.Add(found);
+
 		if (HasEastNeighbour(map, out found))
 			neighbours.Add(found);
 		if (HasWestNeighbour(map, out found))
@@ -79,7 +91,13 @@ public abstract class BaseTile : MonoBehaviour
 	}
 
 	public bool HasNorthNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, North, out found);
+	public bool HasNorthEastNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, North+East, out found);
+	public bool HasNorthWestNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, North+West, out found);
+
 	public bool HasSouthNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, South, out found);
+	public bool HasSouthEastNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, South+East, out found);
+	public bool HasSouthWestNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, South+West, out found);
+
 	public bool HasEastNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, East, out found);
 	public bool HasWestNeighbour(Dictionary<Vector2Int, BaseTile> map, out BaseTile found) => HasNeighbour(map, West, out found);
 
@@ -98,8 +116,13 @@ public abstract class BaseTile : MonoBehaviour
 		return false;
 	}
 
-	Vector2Int North = new Vector2Int(0, 1);
-	Vector2Int South = new Vector2Int(0, -1);
-	Vector2Int East = new Vector2Int(1, 0);
-	Vector2Int West = new Vector2Int(-1, 0);
+	public Vector2Int North = new Vector2Int(0, 1);
+	public Vector2Int NorthEast => North + East;
+	public Vector2Int NorthWest => North + West;
+	public Vector2Int South = new Vector2Int(0, -1);
+	public Vector2Int SouthEast => South + East;
+	public Vector2Int SouthWest => South + West;
+
+	public Vector2Int East = new Vector2Int(1, 0);
+	public Vector2Int West = new Vector2Int(-1, 0);
 }
