@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class RandomMoveController : BaseController
 {
 	public float Speed = 5;
@@ -37,8 +38,8 @@ public class RandomMoveController : BaseController
 		{
 			if (Path.Count == 0 && Character != null && Character.ActiveTile != null)
 			{
-				var randomTile = Random.Range(0, 4);
-				var tile = Character.ActiveTile.GetNeightbourTiles(new List<BaseTile>())[randomTile];
+				var randomTile = Random.Range(0, 8);
+				var tile = Character.ActiveTile.Neighbours[(Direction)randomTile];
 				MapManager.Instance.UpdatePath(Character, new List<BaseTile> { tile });
 			}
 			yield return delay;

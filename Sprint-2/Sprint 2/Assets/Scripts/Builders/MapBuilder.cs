@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -15,15 +16,15 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 	public List<MappableTile> Tiles;
 	public List<Resource> Resources;
 	public MappableTile DefaultTile;
+	public Tilemap Tilemap;
 
 	private void Start()
 	{
 		var grid = GetComponentInChildren<Grid>();
-		var tilemap = grid.GetComponentInChildren<Tilemap>();
+		Tilemap = grid.GetComponentInChildren<Tilemap>();
 		DefaultTile = Tiles.FirstOrDefault(t => !t.OnTopOfGround && t.Walkable);
-		BuildTilemapContainer(tilemap);
+		BuildTilemapContainer(Tilemap);
 	}
-
 	void BuildTilemapContainer(Tilemap tileMap)
 	{
 		MapManager.Instance.Map = new Dictionary<Vector2Int, BaseTile>();
@@ -48,32 +49,22 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 						var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
 						var cellWorldPosition = tileMap.GetCellCenterWorld(tileLocation);
 
-						overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1 + (mappableTile.OnTopOfGround ? 1 : 0));
+						overlayTile.Walkable = mappableTile.Walkable;
+						overlayTile.Resourceable = mappableTile.Resourceable;
 
+						overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y+ (mappableTile.OnTopOfGround ? 0.250001f : 0), cellWorldPosition.z + 1 + (mappableTile.OnTopOfGround ? 1 : 0));
 						overlayTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 						overlayTile.GetComponent<SpriteRenderer>().sprite = mappableTile.ValidTiles[0].sprite;
-						overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tileMap.GetComponent<TilemapRenderer>().sortingOrder;
+						overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tileMap.GetComponent<TilemapRenderer>().sortingOrder +(int)cellWorldPosition.z+(mappableTile.OnTopOfGround ? 1 : 0);
 						overlayTile.GridLocation = tileLocation;
 
 						MapManager.Instance.Map.Add(tileKey, overlayTile);
-
-						if (mappableTile.OnTopOfGround)
-						{
-							overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
-							cellWorldPosition = tileMap.GetCellCenterWorld(tileLocation);
-
-							overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);
-
-							overlayTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-							overlayTile.GetComponent<SpriteRenderer>().sprite = DefaultTile.ValidTiles[0].sprite;
-							overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tileMap.GetComponent<TilemapRenderer>().sortingOrder;
-							overlayTile.GridLocation = tileLocation;
-						}
 					}
 				}
 			}
 		}
-		tileMap.enabled = false;
-		tileMap.RefreshAllTiles();
+
+		foreach(var map in MapManager.Instance.Map.Values)
+			map.GetNeightbourTiles(new List<BaseTile>());
 	}
 }

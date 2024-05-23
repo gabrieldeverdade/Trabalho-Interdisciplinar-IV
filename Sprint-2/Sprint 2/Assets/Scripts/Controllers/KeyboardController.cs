@@ -1,10 +1,13 @@
 using System;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class KeyboardController : BaseController
 {
-	public float Speed = 5;
+	public float Speed = 10;
 	public Direction LatestDirection = Direction.S;
+	public Direction CurrentDirection = Direction.S;
 
 	[SerializeField] Character Character;
 	[SerializeField] int StartPositionX;
@@ -30,7 +33,7 @@ public class KeyboardController : BaseController
 		var horizontal = Input.GetAxis("Horizontal") * Speed;
 		var vertical = Input.GetAxis("Vertical") * (Speed - 1);
 
-		Walk(new Vector2((int)horizontal, (int)vertical));
+		Walk(new Vector2(horizontal, vertical));
 	}
 
 	Direction GetDirection(Vector2 direction)
@@ -45,13 +48,19 @@ public class KeyboardController : BaseController
 		float stepCount = angle / step;
 
 		return (Direction)Enum.ToObject(typeof(Direction), Mathf.FloorToInt(stepCount));
-	}
+	} 
 
 	void Walk(Vector2 direction)
 	{
-		Character.GetComponent<Rigidbody2D>().velocity = direction;
+		Character.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.CeilToInt(direction.x), Mathf.CeilToInt(direction.y));
+		var worldPosition = MapBuilder.Instance.Tilemap.WorldToCell(new Vector3(Character.transform.position.x, Character.transform.position.y, 0));
+
+		Character.GetComponent<CharacterRenderer>().RenderOnTile(MapManager.Instance.Map[new Vector2Int(worldPosition.x, worldPosition.y)]);
 
 		var latestDirection = GetDirection(direction);
+
+		if ((direction.magnitude/Speed) > 0.001)
+			CurrentDirection = latestDirection;
 
 		if ((direction.magnitude/Speed) > 0.5)
 			LatestDirection = latestDirection;

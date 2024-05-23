@@ -13,4 +13,5 @@ public class PlayerAnimation : MonoBehaviour
 	{
 		Animator.Play(animationName);
 	}
+
 }

@@ -15,6 +15,4 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
 
 		Paths[character] = path;
 	}
-
-
 }

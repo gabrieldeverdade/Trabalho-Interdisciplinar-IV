@@ -1,17 +1,21 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static ArrowTranslator;
 
 public abstract class BaseTile : MonoBehaviour
 {
-	public int G;
-	public int H;
-	public int F => G + H;
+	public float G;
+	public float H;
+	public float F => G + H;
+
+	public Dictionary<Direction, BaseTile> Neighbours = new();
 
 	public bool ShowPathAmount = true;
-	public bool IsBlocked;
+	public bool Walkable = false;
+	public bool IsBlocked => /*!CanUsePath &&*/ !Walkable;
+	public bool Resourceable;
 	public BaseTile Previous;
 	public Resource Resource;
 	public int TotalAmount = 3;
@@ -27,25 +31,21 @@ public abstract class BaseTile : MonoBehaviour
 
 	public void ShowTile()
 	{
-		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-		//if (ShowPathAmount)
-		//{
-		//	GetComponentInChildren<TextMeshPro>().enabled = false;
-		//	GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
-		//	GetComponentInChildren<TextMeshPro>().text = $"{UsingPath}/{TotalAmount}";
-		//}
+		gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1, 0.7f);
+		gameObject.GetComponent<SpriteRenderer>().sprite = MapBuilder.Instance.Tiles[0].ValidTiles[1].sprite;
 	}
 
 	public void HideTile()
 	{
-		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-		//if (ShowPathAmount)
-		//{
-		//	GetComponentInChildren<TextMeshPro>().enabled = true;
-		//	GetComponentInChildren<TextMeshPro>().color = new Color(0, 0, 0, 1);
-		//	GetComponentInChildren<TextMeshPro>().text = $"0/{TotalAmount}";
-		//	SetArrowSprite(ArrowDirection.None);
-		//}
+		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+		gameObject.GetComponent<SpriteRenderer>().sprite = MapBuilder.Instance.Tiles[0].ValidTiles[0].sprite;
+		SetText("None");
+	}
+
+	public void SetText(string text)
+	{
+		if(gameObject.GetComponentInChildren<Text>() != null && gameObject.GetComponentInChildren<Text>().enabled)
+			gameObject.GetComponentInChildren<Text>().text = text;
 	}
 
 	public void SetArrowSprite(ArrowDirection d)
@@ -69,23 +69,48 @@ public abstract class BaseTile : MonoBehaviour
 		BaseTile found = null;
 
 		if (HasNorthNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.N, found);
+		}
 		if (HasNorthEastNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.NE, found);
+		}
 		if (HasNorthWestNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.NW, found);
+		}
 
 		if (HasSouthNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.S, found);
+		}
 		if (HasSouthEastNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.SE, found);
+		}
+
 		if (HasSouthWestNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.SW, found);
+		}
 
 		if (HasEastNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.E, found);
+		}
 		if (HasWestNeighbour(map, out found))
+		{
 			neighbours.Add(found);
+			Neighbours.Add(Direction.W, found);
+		}
 
 		return neighbours;
 	}

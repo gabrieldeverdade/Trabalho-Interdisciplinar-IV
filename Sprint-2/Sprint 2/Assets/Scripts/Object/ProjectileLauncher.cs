@@ -24,8 +24,9 @@ public class ProjectileLauncher: MonoBehaviour
 		{
 			CanShoot = false;
 			Bullets--;
+
 			var pos = new Vector3(SpawnLocation.position.x, SpawnLocation.position.y + 0.25f, SpawnLocation.position.z + 2);
-			Instantiate(ProjectilePrefab, pos, GetRotation(KeyboardController.LatestDirection));
+			Instantiate(ProjectilePrefab, pos, GetRotation(KeyboardController.CurrentDirection));
 		}
 
 		if(Bullets > 0 && !CanShoot)

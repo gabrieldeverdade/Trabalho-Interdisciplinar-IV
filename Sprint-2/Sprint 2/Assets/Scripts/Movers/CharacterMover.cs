@@ -15,10 +15,10 @@ public class CharacterMover: MonoBehaviour
 		character.transform.position = Vector2.MoveTowards(character.transform.position, firstPosition, step);
 		character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, z);
 
-		if (Vector2.Distance(character.transform.position, firstPosition) < 0.0001f)
+		if (Vector2.Distance(character.transform.position, firstPosition) < 0.5f)
 		{
 			renderer.RenderOnTile(tile);
-			tile.HideTile();
+			//tile.HideTile();
 			return true;
 		}
 		return false;

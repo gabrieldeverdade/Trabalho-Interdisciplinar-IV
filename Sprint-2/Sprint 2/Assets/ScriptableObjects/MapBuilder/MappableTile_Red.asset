@@ -19,4 +19,5 @@ MonoBehaviour:
   Resourceable: 0
   OnTopOfGround: 1
   ValidTiles:
+  - {fileID: 11400000, guid: 708fc82968304d84291311ffe4970488, type: 2}
   - {fileID: 11400000, guid: 890e65ad7b4ce5249a948a688160f110, type: 2}

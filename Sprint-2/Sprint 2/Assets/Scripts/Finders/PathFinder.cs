@@ -30,7 +30,8 @@ public class PathFinder
 
 			if (current == end) return GetFinishedList(start, end);
 
-			var neighbours = current.GetNeightbourTiles(availableTiles);
+			//var neighbours = current.GetNeightbourTiles(availableTiles);
+			var neighbours = current.Neighbours.Values;
 
 			foreach(var neighbour in neighbours)
 			{

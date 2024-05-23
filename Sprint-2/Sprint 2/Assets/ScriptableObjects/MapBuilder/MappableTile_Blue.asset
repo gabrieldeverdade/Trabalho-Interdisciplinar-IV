@@ -17,6 +17,7 @@ MonoBehaviour:
   Walkable: 1
   Flyable: 1
   Resourceable: 0
+  OnTopOfGround: 0
   ValidTiles:
   - {fileID: 11400000, guid: 9361f17ec4176f3409b499769160b586, type: 2}
   - {fileID: 11400000, guid: e803f160ab5777b42a61678627b0f5bc, type: 2}
@@ -29,3 +30,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5c699cf9f1ce7342a00af6abd13c792, type: 2}
   - {fileID: 11400000, guid: af82a635cd31e6148a94dae544ccc07d, type: 2}
   - {fileID: 11400000, guid: 5f38a5a8ee0d5ab4ca27e2d888b2be00, type: 2}
+  - {fileID: 11400000, guid: 7f0feb11cc3a6a54284a762059abb07b, type: 2}

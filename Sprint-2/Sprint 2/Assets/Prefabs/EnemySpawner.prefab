@@ -47,7 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnLocation: {fileID: 5845997419706260613}
   EnemyPrefab: {fileID: 4765817817580429936, guid: 62bcfc6be1d6fd44a825b152270f0065, type: 3}
+  Destination: {fileID: 0}
   IsKeyDown: 0
+  SpawnTimer: 50
+  TimeUntilSpawn: 0
+  SpawnX: -6
+  SpawnY: 7
 --- !u!212 &2637540316999109075
 SpriteRenderer:
   m_ObjectHideFlags: 0
