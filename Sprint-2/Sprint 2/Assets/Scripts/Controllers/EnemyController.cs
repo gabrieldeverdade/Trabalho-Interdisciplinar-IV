@@ -42,7 +42,7 @@ public class EnemyController : BaseController
 		this.AddComponent<CharacterMover>();
 		this.AddComponent<CharacterRenderer>();
 
-		IsResourceGetter = false;/*Random.Range(0, 10) > 3;*/
+		IsResourceGetter = Random.Range(0, 10) > 3;
 
 		CharacterMover = GetComponent<CharacterMover>();
 	}
@@ -97,14 +97,12 @@ public class EnemyController : BaseController
 					resource.Reverse();
 					MapManager.Instance.UpdatePath(Character, resource);
 				}
-				Debug.Log("GOING BACK THROUGH RESOURCE PATH");
 			} else if (GoingBackFromResource)
 			{
 				GoingBackFromResource = false;
 				GoingToResource = true;
 				if (SpawnArea.GetResource(out var resource))
 					MapManager.Instance.UpdatePath(Character, resource);
-				Debug.Log("GOING THROUGH RESOURCE PATH");
 			}
 
 			if (!MakeResourceFindMovement())
