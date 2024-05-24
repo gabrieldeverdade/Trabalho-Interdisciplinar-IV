@@ -10,7 +10,7 @@ public class SpawnArea: MonoBehaviour
 	[SerializeField] Transform SpawnLocation;
 	[SerializeField] Character EnemyPrefab;
 	[SerializeField] Character Destination;
-	[SerializeField] Dictionary<BaseTile, List<BaseTile>> ResourcesPath = new();
+	[SerializeField] public Dictionary<BaseTile, List<BaseTile>> ResourcesPath = new();
 
 	[SerializeField] List<BaseTile> Resources => ResourcesPath.Keys.ToList();
 
@@ -83,8 +83,8 @@ public class SpawnArea: MonoBehaviour
 				{
 					var current = path[i];
 					var next = path[i + 1];
-					Gizmos.color = new Color(i/255, 0, 0);
-					Gizmos.DrawLine(current.transform.position, next.transform.position);
+					Gizmos.color = new Color(0, 0, 1, 0.3f);
+					Gizmos.DrawLine(current.transform.position+new Vector3(0.2f, 0.2f,0), next.transform.position + new Vector3(0.2f, 0.2f, 0));
 				}
 			}
 		}

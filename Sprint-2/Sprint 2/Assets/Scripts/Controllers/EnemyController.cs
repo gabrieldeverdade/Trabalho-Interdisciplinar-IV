@@ -76,6 +76,7 @@ public class EnemyController : BaseController
 		{
 			var current = Path[i];
 			var next = Path[i+1];
+			Gizmos.color = new Color(0,1,0, .3f);
 			Gizmos.DrawLine(current.transform.position, next.transform.position);
 		}
 	}

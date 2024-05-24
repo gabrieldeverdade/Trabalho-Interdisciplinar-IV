@@ -37,7 +37,7 @@ public class PathFinderOptimized
 				return path;
 			}
 
-			if(Vector3.Distance(start.transform.position, current.transform.position) > range) 
+			if(Vector3.Distance(start.transform.position, current.transform.position) > range && range != 0) 
 				return new List<BaseTile>();
 
 			foreach (var neighbour in current.Neighbours.Values.Where(c => (!c.IsBlocked && !processed.Contains(c)) || c == end))
@@ -63,4 +63,4 @@ public class PathFinderOptimized
 
 	float GetManhattanDistance(BaseTile start, BaseTile neighbor)
 		=> Mathf.Abs(start.GridLocation.x - neighbor.GridLocation.x) + Mathf.Abs(start.GridLocation.y - neighbor.GridLocation.y);
-} 
+}
