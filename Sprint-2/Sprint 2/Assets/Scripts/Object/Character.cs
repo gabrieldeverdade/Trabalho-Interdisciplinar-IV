@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Character: MonoBehaviour
+public class Character : MonoBehaviour
 {
 	public int Health = 50;
 	public BaseTile ActiveTile;
@@ -11,6 +12,7 @@ public class Character: MonoBehaviour
 		Health -= 10;
 		if (Health <= 0)
 			Destroy(gameObject);
+		SceneManager.LoadScene(2);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +22,7 @@ public class Character: MonoBehaviour
 		if (tag == "Enemy")
 		{
 			TakeHit();
-			if(Health <= 0)
+			if (Health <= 0)
 				Destroy(gameObject);
 		}
 	}
