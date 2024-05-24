@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ClockManager: SingletonMonoBehaviour<ClockManager>
 {
-	Text ClockText;
 	public int ClockTime = 0;
 	public static UnityEvent OnChange;
+	[SerializeField] Text ClockText;
+	[SerializeField] Camera Camera;
 
 	void Start()
 	{
-		ClockText = GetComponentInChildren<Text>();
 		StartCoroutine(TimerRoutine());
 	}
 

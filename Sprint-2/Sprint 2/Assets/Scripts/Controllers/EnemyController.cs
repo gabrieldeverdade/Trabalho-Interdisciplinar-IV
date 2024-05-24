@@ -137,8 +137,6 @@ public class EnemyController : BaseController
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		IsInRange = true;
 		PathList = PathFinder.Find(Character.ActiveTile, Destination.ActiveTile, range: Range);
-
-		Debug.Log(PathList);
 		MapManager.Instance.UpdatePath(Character, PathList);
 		Latest = Destination.ActiveTile;
 	}
@@ -171,8 +169,6 @@ public class EnemyController : BaseController
 				completePath = SpawnArea.SetResource(closesTile);
 				GoingBackFromResource = true;
 			}
-			else
-				Debug.Log($"NOT AT RESOURCE {foundPath.Count} / {currentTile}");
 
 			MapManager.Instance.UpdatePath(Character, completePath);
 			IsInRange = true;

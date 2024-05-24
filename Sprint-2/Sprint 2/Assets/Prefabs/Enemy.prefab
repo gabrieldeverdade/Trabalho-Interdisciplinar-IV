@@ -75,9 +75,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477af7c688a8e41459f1b0295717eff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartHealth: 50
   Health: 50
+  IsPlayer: 0
   ActiveTile: {fileID: 0}
   Controller: {fileID: 0}
+  IsDamaging: 0
 --- !u!50 &3363480512817208931
 Rigidbody2D:
   serializedVersion: 4
@@ -177,18 +180,18 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9156594022518956601}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ce9f421f6f502b4a90e8da79cc8d9fb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.283
+  m_Volume: 0.014
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 251
+  Priority: 256
   DopplerLevel: 0.57
   MinDistance: 0.1
   MaxDistance: 1
