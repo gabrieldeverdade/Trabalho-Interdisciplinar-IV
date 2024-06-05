@@ -1,30 +1,21 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 {
-	public int MapJumpHeight = 1;
-
-	public GameObject overlayContainer;
-
-	public BaseTile overlayPrefab;
-
-	public List<MappableTile> Tiles;
-	public List<Resource> Resources;
-	public MappableTile DefaultTile;
 	public Tilemap Tilemap;
+	public BaseTile OverlayPrefab;
+	public List<Tile> UnwalkableTiles;
+	public List<Tile> ClimbableTiles;
 
 	private void Start()
 	{
 		var grid = GetComponentInChildren<Grid>();
 		Tilemap = grid.GetComponentInChildren<Tilemap>();
-		DefaultTile = Tiles.FirstOrDefault(t => !t.OnTopOfGround && t.Walkable);
 		BuildTilemapContainer(Tilemap);
 	}
+
 	void BuildTilemapContainer(Tilemap tileMap)
 	{
 		MapManager.Instance.Map = new Dictionary<Vector2Int, BaseTile>();
@@ -43,20 +34,34 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 					if (tileMap.HasTile(tileLocation) && !MapManager.Instance.Map.ContainsKey(tileKey))
 					{
 						var tile = tileMap.GetTile(tileLocation);
-						var mappableTile = Tiles.FirstOrDefault(t => t.Tile == tile);
-						if (mappableTile == null) continue;
-
-						var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
+						var overlayTile = Instantiate(OverlayPrefab, tileMap.transform);
 						var cellWorldPosition = tileMap.GetCellCenterWorld(tileLocation);
 
-						overlayTile.Walkable = mappableTile.Walkable;
-						overlayTile.Resourceable = mappableTile.Resourceable;
+						overlayTile.Height = z;
 
-						overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y+ (mappableTile.OnTopOfGround ? 0.250001f : 0), cellWorldPosition.z + 1 + (mappableTile.OnTopOfGround ? 1 : 0));
-						overlayTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-						overlayTile.GetComponent<SpriteRenderer>().sprite = mappableTile.ValidTiles[0].sprite;
-						overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tileMap.GetComponent<TilemapRenderer>().sortingOrder +(int)cellWorldPosition.z+(mappableTile.OnTopOfGround ? 1 : 0);
+						overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y+0.0001f, cellWorldPosition.z+1);
+						overlayTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.0f);
+						overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tileMap.GetComponent<TilemapRenderer>().sortingOrder +(int)cellWorldPosition.z;
 						overlayTile.GridLocation = tileLocation;
+
+						overlayTile.WorldPosition = new Position
+						{
+							Left = new Vector3(overlayTile.transform.position.x - 0.5f, overlayTile.transform.position.y, 0),
+							Right = new Vector3(overlayTile.transform.position.x + 0.5f, overlayTile.transform.position.y, 0),
+							Up = new Vector3(overlayTile.transform.position.x, overlayTile.transform.position.y + 0.25f, 0),
+							Down = new Vector3(overlayTile.transform.position.x, overlayTile.transform.position.y - 0.25f, 0),
+						};
+
+						if (UnwalkableTiles.Find(c => c == tile))
+							overlayTile.Walkable = false;
+						else
+							overlayTile.Walkable = true;
+
+						if (ClimbableTiles.Find(c => c == tile))
+							overlayTile.Climbable = true;
+						else
+							overlayTile.Climbable = false;
+
 
 						MapManager.Instance.Map.Add(tileKey, overlayTile);
 					}

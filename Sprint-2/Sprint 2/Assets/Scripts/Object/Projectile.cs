@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile: MonoBehaviour
@@ -28,5 +27,4 @@ public class Projectile: MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
 }

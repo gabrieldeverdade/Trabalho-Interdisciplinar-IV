@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 
 public class Character : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Character : MonoBehaviour
 		}
 		else if (!IsPlayer)
 		{
-			Health -= 10;
+			Health -= 20;
 			if (Health <= 0)
 			{
 				Destroy(gameObject);
@@ -67,4 +68,23 @@ public class Character : MonoBehaviour
 
 		IsDamaging = false;
 	}
+
+	public void UpdatePosition(Vector2 position)
+	{
+		Position = position;
+		GetComponent<Rigidbody2D>().position = PositionWithHeight;
+		ActiveTile = GetNextTile(position);
+	}
+
+	public Vector2 Position;
+	public Vector2 PositionWithHeight => Position + (ActiveTile.Height * new Vector2(0, 0.25f));
+
+	BaseTile GetNextTile(Vector3 position)
+	{
+		var worldPosition = MapBuilder.Instance.Tilemap.WorldToCell(position);
+		var worldPosition2D = new Vector2Int(worldPosition.x, worldPosition.y);
+		var nextTile = MapManager.Instance.Map[worldPosition2D];
+		return nextTile;
+	}
+
 }

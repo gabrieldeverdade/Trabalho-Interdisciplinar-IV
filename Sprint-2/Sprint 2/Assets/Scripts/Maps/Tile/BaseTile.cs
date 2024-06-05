@@ -14,6 +14,9 @@ public abstract class BaseTile : MonoBehaviour
 
 	public bool ShowPathAmount = true;
 	public bool Walkable = false;
+	public bool Climbable = false;
+
+	public int Height = 0;
 	public bool IsBlocked => /*!CanUsePath &&*/ !Walkable;
 	public bool Resourceable;
 	public BaseTile Previous;
@@ -26,19 +29,21 @@ public abstract class BaseTile : MonoBehaviour
 
 	public Vector3Int GridLocation;
 	public Vector2Int GridLocation2D => new Vector2Int(GridLocation.x, GridLocation.y);
+	
+	public Position WorldPosition;
+
+
 
 	[SerializeField] List<Sprite> Directions = new List<Sprite>();
 
 	public void ShowTile()
 	{
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1, 0.7f);
-		gameObject.GetComponent<SpriteRenderer>().sprite = MapBuilder.Instance.Tiles[0].ValidTiles[1].sprite;
 	}
 
 	public void HideTile()
 	{
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-		gameObject.GetComponent<SpriteRenderer>().sprite = MapBuilder.Instance.Tiles[0].ValidTiles[0].sprite;
 		SetText("None");
 	}
 
@@ -133,7 +138,7 @@ public abstract class BaseTile : MonoBehaviour
 		var (x, y, z) = (point.x, point.y, point.z);
 
 		var locationToCheck = new Vector2Int(x, y) + direction;
-		if (map.ContainsKey(locationToCheck) && Mathf.Abs(map[locationToCheck].GridLocation.z - z) < MapManager.Instance.MapJumpHeight)
+		if (map.ContainsKey(locationToCheck))
 		{
 			foundTile = map[locationToCheck];
 			return true;
@@ -144,6 +149,7 @@ public abstract class BaseTile : MonoBehaviour
 	public Vector2Int North = new Vector2Int(0, 1);
 	public Vector2Int NorthEast => North + East;
 	public Vector2Int NorthWest => North + West;
+
 	public Vector2Int South = new Vector2Int(0, -1);
 	public Vector2Int SouthEast => South + East;
 	public Vector2Int SouthWest => South + West;

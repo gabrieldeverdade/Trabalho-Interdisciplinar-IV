@@ -62,12 +62,12 @@ public class CharacterRenderer: MonoBehaviour
 			//	order = 5;
 
 			tile.Value.GetComponent<SpriteRenderer>().sortingOrder = order;
-			tile.Value.SetText(tile.Key.ToString());
+			//tile.Value.SetText(tile.Key.ToString());
 		}
 		foreach (var tile in frontNeighbours)
 		{
 			tile.Value.GetComponent<SpriteRenderer>().sortingOrder = 5;
-			tile.Value.SetText(tile.Key.ToString());
+			//tile.Value.SetText(tile.Key.ToString());
 		}
 
 		character.ActiveTile = overlayTyle;

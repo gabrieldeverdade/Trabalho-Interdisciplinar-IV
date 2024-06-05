@@ -54,7 +54,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 4765817817580429936, guid: 62bcfc6be1d6fd44a825b152270f0065, type: 3}
   Destination: {fileID: 0}
   IsKeyDown: 0
-  SpawnTimer: 1
+  SpawnTimer: 100
   TimeUntilSpawn: 0
   SpawnX: -6
   SpawnY: 7

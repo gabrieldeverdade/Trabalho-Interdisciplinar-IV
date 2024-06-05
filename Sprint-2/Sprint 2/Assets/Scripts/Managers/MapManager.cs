@@ -4,11 +4,9 @@ using UnityEngine.UI;
 
 public class MapManager : SingletonMonoBehaviour<MapManager>
 {
-
 	[SerializeField] Text Text;
-	public int MapJumpHeight = 1;
 
-	public int Points = 0;
+	public int Points { get; private set; }
 
 	public Dictionary<Vector2Int, BaseTile> Map;
 	public Dictionary<Character, List<BaseTile>> Paths = new();

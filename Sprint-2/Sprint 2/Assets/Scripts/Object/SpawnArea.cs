@@ -20,9 +20,8 @@ public class SpawnArea: MonoBehaviour
 	public int SpawnX;
 	public int SpawnY;
 
-	void Start()
-	{
-	}
+	void Start(){ }
+
 	void Update()
 	{
 		if (SpawnTile == null)
@@ -43,7 +42,6 @@ public class SpawnArea: MonoBehaviour
 			IsKeyDown = true;
 			var enemy = Instantiate(EnemyPrefab, SpawnLocation);
 			enemy.GetComponent<EnemyController>().SetDestination(Destination);
-			
 			enemy.GetComponent<EnemyController>().SetStartPosition((int)SpawnTile.transform.position.x, (int)SpawnTile.transform.position.y);
 		}
 

@@ -1,19 +1,26 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ClockManager: SingletonMonoBehaviour<ClockManager>
+public class ClockManager : SingletonMonoBehaviour<ClockManager>
 {
-	public int ClockTime = 0;
-	public static UnityEvent OnChange;
 	[SerializeField] Text ClockText;
 	[SerializeField] Camera Camera;
 
-	void Start()
+	public int ClockTime { get; private set; } = 0;
+	public float TimeDelta { get; private set; } = 0;
+
+	void Start() => StartCoroutine(TimerRoutine());
+
+	void Update()
 	{
-		StartCoroutine(TimerRoutine());
+		string second = LeadingZero(ClockTime % 60);
+		string minute = LeadingZero(ClockTime / 60);
+		ClockText.text = minute + ":" + second;
+		TimeDelta += Time.deltaTime;
 	}
+
+	string LeadingZero(int n) => n.ToString().PadLeft(2, '0');
 
 	IEnumerator TimerRoutine()
 	{
@@ -24,13 +31,4 @@ public class ClockManager: SingletonMonoBehaviour<ClockManager>
 			yield return delay;
 		}
 	}
-	
-	void Update()
-	{
-		string second = LeadingZero(ClockTime % 60);
-		string minute = LeadingZero(ClockTime / 60);
-		ClockText.text = minute + ":" + second;
-	}
-
-	string LeadingZero(int n) => n.ToString().PadLeft(2, '0');
 }

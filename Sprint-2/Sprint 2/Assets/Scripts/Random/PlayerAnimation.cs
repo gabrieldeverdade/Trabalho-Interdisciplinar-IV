@@ -7,5 +7,6 @@ public enum Direction
 	S = 4,
 	SE = 5,
 	E = 6,
-	NE = 7
+	NE = 7,
+	None = 8
 }
