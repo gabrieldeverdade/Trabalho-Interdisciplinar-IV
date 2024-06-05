@@ -8,6 +8,8 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 	public BaseTile OverlayPrefab;
 	public List<Tile> UnwalkableTiles;
 	public List<Tile> ClimbableTiles;
+	public int XMax;
+	public int XMin;
 
 	private void Start()
 	{
@@ -21,7 +23,8 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 		MapManager.Instance.Map = new Dictionary<Vector2Int, BaseTile>();
 
 		BoundsInt bounds = tileMap.cellBounds;
-
+		XMax = bounds.max.x;
+		XMin = bounds.min.x;
 		for (int z = bounds.max.z; z >= bounds.min.z; z--)
 		{
 			for (int y = bounds.min.y; y < bounds.max.y; y++)

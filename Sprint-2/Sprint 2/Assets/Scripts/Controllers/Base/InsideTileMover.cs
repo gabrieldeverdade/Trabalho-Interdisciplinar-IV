@@ -19,8 +19,8 @@ public class InsideTileMover
 		
 		if (directionInfo.Direction == Direction.None) return false;
 
-		var nextPosition = character.Position + (directionInfo.Direction2D * 0.01f);
-		Debug.Log(nextPosition);
+		var nextPosition = character.Position + (directionInfo.Direction2D * 0.02f);
+		Debug.Log($"ROW: {Character.GetRow()}");
 
 		NextTile = GetNextTile(nextPosition);
 
@@ -45,16 +45,16 @@ public class InsideTileMover
 
 	public void Draw(BaseTile mapPosition, Color? color = null)
 	{
-		foreach (var neigbour in mapPosition.Neighbours)
-		{
-			if (neigbour.Value.GetComponentInChildren<Text>())
-			{
-				neigbour.Value.GetComponentInChildren<Text>().text = $"({neigbour.Value.transform.position.x},{neigbour.Value.transform.position.y.ToString("0.##")},{neigbour.Value.transform.position.z})";
-				neigbour.Value.GetComponentInChildren<Text>().enabled = true;
-			}
+		//foreach (var neigbour in mapPosition.Neighbours)
+		//{
+		//	if (neigbour.Value.GetComponentInChildren<Text>())
+		//	{
+		//		neigbour.Value.GetComponentInChildren<Text>().text = $"({neigbour.Value.transform.position.x},{neigbour.Value.transform.position.y.ToString("0.##")},{neigbour.Value.transform.position.z})";
+		//		neigbour.Value.GetComponentInChildren<Text>().enabled = true;
+		//	}
 
-			neigbour.Value.GetComponent<SpriteRenderer>().color = new Color(neigbour.Value.Walkable ? 0 : 1, neigbour.Value.Walkable ? 1 : 0, 0, 1);
-		}
+		//	neigbour.Value.GetComponent<SpriteRenderer>().color = new Color(neigbour.Value.Walkable ? 0 : 1, neigbour.Value.Walkable ? 1 : 0, 0, 1);
+		//}
 	}
 
 	public void DrawGizmos()

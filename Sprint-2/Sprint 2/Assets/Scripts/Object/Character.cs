@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
 public class Character : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class Character : MonoBehaviour
 	{
 		Position = position;
 		GetComponent<Rigidbody2D>().position = PositionWithHeight;
+		transform.position = new Vector3(transform.position.x, transform.position.y, ActiveTile.Height);
 		ActiveTile = GetNextTile(position);
 	}
 
@@ -87,4 +89,10 @@ public class Character : MonoBehaviour
 		return nextTile;
 	}
 
+	public int GetRow()
+	{
+		var worldPosition = MapBuilder.Instance.Tilemap.WorldToCell(Position);
+		
+		return worldPosition.x;
+	}
 }

@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
@@ -31,6 +32,9 @@ public class Position
 
 public class KeyboardController : BaseController
 {
+	public int X;
+	public int Y;
+
 	public int JumpHeight = 2;
 	public float Speed = 10;
 	public Direction LatestDirection = Direction.S;
@@ -100,6 +104,19 @@ public class KeyboardController : BaseController
 
 
 		if (InsideTileMover.Move(direction, Character)) return;
+
+		MapManager.Instance.Map[new Vector2Int(X, Y)].GetComponent<SpriteRenderer>().color = new Color(1, 0, 1, 0);
+
+		if (Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Equals)) X++;
+		if (Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Minus)) X--;
+
+		if (Input.GetKey(KeyCode.Y) && Input.GetKeyDown(KeyCode.Equals)) Y++;
+		if (Input.GetKey(KeyCode.Y) && Input.GetKeyDown(KeyCode.Minus)) Y--;
+
+
+		if(MapManager.Instance.Map != null)
+			MapManager.Instance.Map[new Vector2Int(X, Y)].GetComponent<SpriteRenderer>().color = new Color(1, 0, 1, 1);
+
 
 		//var directionEnum = GetDirection(direction.x, direction.y);
 		//var directionVector = GetDirection(directionEnum);
