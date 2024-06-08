@@ -16,11 +16,11 @@ public class ProjectileLauncher: MonoBehaviour
 	public GameObject ProjectilePrefab;
 	public Transform SpawnLocation;
 	public Quaternion SpawnRotation;
-	KeyboardController KeyboardController;
+	PlayerAnimation PlayerAnimation;
 
 	public void Start()
 	{
-		KeyboardController = GetComponentInParent<KeyboardController>();
+		PlayerAnimation = GetComponentInParent<PlayerAnimation>();
 	}
 
 	void Update()
@@ -35,7 +35,7 @@ public class ProjectileLauncher: MonoBehaviour
 			ReloadingImage.fillAmount = (float)Bullets/(float)TotalBullets;
 
 			var pos = new Vector3(SpawnLocation.position.x, SpawnLocation.position.y + 0.25f, SpawnLocation.position.z + 2);
-			Instantiate(ProjectilePrefab, pos, GetRotation(KeyboardController.CurrentDirection));
+			Instantiate(ProjectilePrefab, pos, GetRotation(PlayerAnimation.CurrentDirection));
 		}
 
 		if(Bullets > 0 && !CanShoot)

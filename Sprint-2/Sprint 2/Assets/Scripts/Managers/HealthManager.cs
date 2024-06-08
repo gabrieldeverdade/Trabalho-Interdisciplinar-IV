@@ -5,9 +5,6 @@ public class HealthManager : MonoBehaviour
 {
 	[SerializeField] Image healthBar;
 
-
-
-
 	public void ChangeBar(float totalLife)
 	{
 		healthBar.fillAmount = totalLife;

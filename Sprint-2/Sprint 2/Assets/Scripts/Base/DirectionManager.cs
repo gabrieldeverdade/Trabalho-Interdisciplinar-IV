@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public static class DirectionManager
@@ -14,13 +15,13 @@ public static class DirectionManager
 
 	public static Vector2 GetDirection(Direction direction) => direction switch
 	{
-		Direction.N => new Vector2(0.00f, 0.50f),
+		Direction.N => new Vector2(0.00f, 0.50f) / 1.4f,
 		Direction.NE => new Vector2(0.50f, 0.25f),
-		Direction.E => new Vector2(1.00f, 0.00f),
+		Direction.E => new Vector2(1.00f, 0.00f) / 1.4f,
 		Direction.SE => new Vector2(0.50f, -0.25f),
-		Direction.S => new Vector2(0.00f, -0.50f),
+		Direction.S => new Vector2(0.00f, -0.50f) / 1.4f,
 		Direction.SW => new Vector2(-0.50f, -0.25f),
-		Direction.W => new Vector2(-1.00f, 0.00f),
+		Direction.W => new Vector2(-1.00f, 0.00f) / 1.4f,
 		Direction.NW => new Vector2(-0.50f, 0.25f),
 		Direction.None => Vector2.zero,
 		_ => Vector2.zero
@@ -58,4 +59,18 @@ public static class DirectionManager
 			Direction.W => "Left",
 			_ => "Bottom"
 		};
+
+	public static Direction GetDirectionDegrees(Vector2 direction)
+	{
+		float step = 360 / 8;
+		float offset = step / 2;
+		float angle = Vector2.SignedAngle(Vector2.up, direction.normalized);
+
+		angle += offset;
+		if (angle < 0) angle += 360;
+
+		float stepCount = angle / step;
+
+		return (Direction)Enum.ToObject(typeof(Direction), Mathf.FloorToInt(stepCount));
+	}
 }

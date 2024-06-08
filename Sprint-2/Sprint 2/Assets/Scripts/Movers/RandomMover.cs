@@ -1,28 +1,22 @@
-using System.IO;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
-public class RandomMover: MonoBehaviour
+public class RandomMover
 {
 	public float DecisionClock = 11;
 	public float ChangeDecisionAt = 10;
 	public float Speed = 10;
+	public System.Random RNG;
 
-
-	public void Start()
+	public void Move(Character character)
 	{
-		var random = new System.Random();
-		GetComponent<Rigidbody2D>().velocity = new Vector2(random.Next(-1, 2), random.Next(-1, 2)) * Speed;
-	}
+		var characterRigidBody = character.GetComponent<Rigidbody2D>();
+		characterRigidBody.velocity = new Vector2(RNG.Next(-1, 2), RNG.Next(-1, 2)) * Speed;
 
-	public void Update()
-	{
 		DecisionClock += Time.deltaTime;
 		if(DecisionClock > ChangeDecisionAt)
 		{
 			DecisionClock = 0;
-			var random = new System.Random();
-			GetComponent<Rigidbody2D>().velocity = new Vector2(random.Next(-1, 2), random.Next(-1, 2)) * Speed;
+			characterRigidBody.velocity = new Vector2(RNG.Next(-1, 2), RNG.Next(-1, 2)) * Speed;
 		}
 	}
 }

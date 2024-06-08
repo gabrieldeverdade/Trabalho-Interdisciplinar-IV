@@ -2,18 +2,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class StalkController : BaseController
+public class StalkController : MonoBehaviour
 {
 	public float Speed = 3;
 	public int Range = 6;
 
-	CharacterMover CharacterMover;
+	TileSpecificMover CharacterMover;
 
 	Character Character;
 	[SerializeField] Character Destination;
 	[SerializeField] int StartPositionX;
 	[SerializeField] int StartPositionY;
-
 
 	BaseTile Latest;
 	PathFinder PathFinder;
@@ -24,10 +23,9 @@ public class StalkController : BaseController
 	{
 		PathFinder = new PathFinder(false);
 		Character = GetComponent<Character>();
-		this.AddComponent<CharacterMover>();
 		this.AddComponent<CharacterRenderer>();
 
-		CharacterMover = GetComponent<CharacterMover>();
+		CharacterMover = new TileSpecificMover();
 	}
 
 	public void LateUpdate()
@@ -41,7 +39,7 @@ public class StalkController : BaseController
 		{
 			if (Path.Count > 0)
 			{
-				if(CharacterMover.Move(Speed, Path[0]))
+				if(CharacterMover.Move(Character, Speed, Path[0]))
 					Path.RemoveAt(0);
 			}
 		}

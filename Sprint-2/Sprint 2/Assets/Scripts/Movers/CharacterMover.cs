@@ -1,26 +1,26 @@
-using System.IO;
 using UnityEngine;
 
-public class CharacterMover: MonoBehaviour
+public class CharacterMover
 {
-	public bool Move(float speed, BaseTile tile)
+	public bool Move(Vector2Int direction, Character character)
 	{
-		var character = GetComponent<Character>();
-		var renderer  = GetComponent<CharacterRenderer>();
+		var directionInfo = DirectionManager.GetDirection(direction.x, direction.y);
+		
+		if (directionInfo.Direction == Direction.None)
+			return false;
 
-		var firstPosition = tile.transform.position;
-		var step = speed * Time.deltaTime;
-		var z = firstPosition.z;
+		var nextPosition = character.Position + (directionInfo.Direction2D * 0.02f);
 
-		character.transform.position = Vector2.MoveTowards(character.transform.position, firstPosition, step);
-		character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, z);
+		var nextTile = MapManager.Instance.GetCellFromWorldPosition(nextPosition);
 
-		if (Vector2.Distance(character.transform.position, firstPosition) < 0.5f)
-		{
-			renderer.RenderOnTile(tile);
-			//tile.HideTile();
-			return true;
-		}
+		if (TileIsBlocked(character, nextTile))
+			return false;
+
+		character.UpdatePosition(nextPosition);
+
 		return false;
 	}
+
+	bool TileIsBlocked(Character character, BaseTile tile)
+		=> tile == null || !tile.Walkable || character.CanReachHeight(tile);
 }

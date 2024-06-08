@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomMoveController : BaseController
+public class RandomMoveController : MonoBehaviour
 {
 	public float Speed = 5;
 	public int Range = 5;

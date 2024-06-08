@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8910ba0c3555849a0282e869a46309, type: 3}
   m_Name: Resource_Wood_Resource
   m_EditorClassIdentifier: 
-  Name: Water
-  Description: "\xC1gua para que os mosquitos consigam utilizar"
+  Name: Wood
+  Description: Madeira
   Tile: {fileID: 11400000, guid: ba0c9654b346d4e4c94e0f6cdcbabcfb, type: 2}
   Amount: 10000

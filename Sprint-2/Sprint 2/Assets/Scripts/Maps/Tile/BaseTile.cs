@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using static ArrowTranslator;
 
 public abstract class BaseTile : MonoBehaviour
 {
@@ -15,10 +14,12 @@ public abstract class BaseTile : MonoBehaviour
 	public bool ShowPathAmount = true;
 	public bool Walkable = false;
 	public bool Climbable = false;
+	public bool Resourceable = false;
+	public bool WorkBench = false;
 
+	public int CurrentResource;
 	public int Height = 0;
 	public bool IsBlocked => /*!CanUsePath &&*/ !Walkable;
-	public bool Resourceable;
 	public BaseTile Previous;
 	public Resource Resource;
 	public int TotalAmount = 3;
@@ -30,7 +31,7 @@ public abstract class BaseTile : MonoBehaviour
 	public Vector3Int GridLocation;
 	public Vector2Int GridLocation2D => new Vector2Int(GridLocation.x, GridLocation.y);
 	
-	public Position WorldPosition;
+	public TileBounds WorldPosition;
 
 
 
@@ -49,22 +50,16 @@ public abstract class BaseTile : MonoBehaviour
 
 	public void SetText(string text)
 	{
-		if(gameObject.GetComponentInChildren<Text>() != null && gameObject.GetComponentInChildren<Text>().enabled)
+		if (gameObject.GetComponentInChildren<Text>() != null)
+		{
+			gameObject.GetComponentInChildren<Text>().enabled = true;
 			gameObject.GetComponentInChildren<Text>().text = text;
+		}
 	}
 
-	public void SetArrowSprite(ArrowDirection d)
+	public void HideText()
 	{
-		var arrow = GetComponentsInChildren<SpriteRenderer>()[1];
-		if (d == ArrowDirection.None)
-			arrow.color = new Color(1, 1, 1, 0);
-		else
-		{
-			arrow.color = new Color(1, 1, 1, 1);
-			arrow.sprite = Directions[(int)d];
-			arrow.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
-		}
-
+		gameObject.GetComponentInChildren<Text>().enabled = false;
 	}
 
 	public List<BaseTile> GetNeightbourTiles(List<BaseTile> searchableTiles)
@@ -156,4 +151,18 @@ public abstract class BaseTile : MonoBehaviour
 
 	public Vector2Int East = new Vector2Int(1, 0);
 	public Vector2Int West = new Vector2Int(-1, 0);
+
+	public TileBounds BuildBounds()
+		=> BuildBounds(transform.position);
+
+	TileBounds BuildBounds(Vector3 position)
+	{
+		return new TileBounds
+		{
+			Left = new Vector3(position.x - 0.5f, position.y, 0),
+			Right = new Vector3(position.x + 0.5f, position.y, 0),
+			Up = new Vector3(position.x, position.y + 0.25f, 0),
+			Down = new Vector3(position.x, position.y - 0.25f, 0),
+		};
+	}
 }

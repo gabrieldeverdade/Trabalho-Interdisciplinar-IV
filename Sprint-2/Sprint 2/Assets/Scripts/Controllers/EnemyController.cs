@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyController : BaseController
+public class EnemyController : MonoBehaviour
 {
 	bool GoingToResource = false;
 	bool GoingBackFromResource = false;
@@ -16,7 +16,7 @@ public class EnemyController : BaseController
 	bool IsInRange = false;
 	bool CanSpawn = false;
 
-	CharacterMover CharacterMover;
+	TileSpecificMover CharacterMover;
 
 	Character Character;
 	[SerializeField] float DecisionAmount = 3f;
@@ -39,12 +39,11 @@ public class EnemyController : BaseController
 		SpawnArea = GetComponentInParent<SpawnArea>();
 		Character = GetComponent<Character>();
 
-		this.AddComponent<CharacterMover>();
 		this.AddComponent<CharacterRenderer>();
 
 		IsResourceGetter = Random.Range(0, 10) > 3;
 
-		CharacterMover = GetComponent<CharacterMover>();
+		CharacterMover = new TileSpecificMover();
 	}
 
 	void Update()
@@ -61,7 +60,7 @@ public class EnemyController : BaseController
 
 			if (Path.Count > 0)
 			{
-				if (CharacterMover.Move(Speed, Path[0]))
+				if (CharacterMover.Move(Character, Speed, Path[0]))
 				{
 					Character.ActiveTile = Path[0];
 					Path.RemoveAt(0);
