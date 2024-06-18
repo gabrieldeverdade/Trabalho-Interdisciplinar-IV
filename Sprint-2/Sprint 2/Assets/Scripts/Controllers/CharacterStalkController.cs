@@ -1,3 +1,6 @@
+
+using UnityEngine;
+
 public class CharacterStalkController : BaseController
 {
 	Enemy Enemy;
@@ -10,6 +13,7 @@ public class CharacterStalkController : BaseController
 
 	void FixedUpdate()
 	{
+		Debug.Log("Searching");
 		InitializeActiveTile();
 		TryMoveEnemy();
 		FindNewPath();
