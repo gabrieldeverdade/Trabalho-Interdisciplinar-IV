@@ -1,42 +1,17 @@
-using UnityEngine;
-
-public class KeyboardController : MonoBehaviour
+public class KeyboardController : CharacterBaseController<Character>
 {
-	public int Speed = 2;
-	public CharacterMover InsideTileMover;
+	public float Speed = 0.1f;
 
-	PlayerAnimation PlayerAnimation;
+	void FixedUpdate() { Walk(); }
 
-	[SerializeField] Character Character;
-
-	private void Start()
+	void Walk()
 	{
-		PlayerAnimation = Character.GetComponent<PlayerAnimation>();
-		InsideTileMover = new CharacterMover();
-	}
-
-	private void Update()
-	{
-		InitializeCharacterActiveTile();
-		Walk(InputController.GetInputVector());
-	}
-
-	void InitializeCharacterActiveTile()
-	{
-		if (Character.ActiveTile == null)
-		{
-			Character.ActiveTile = MapManager.Instance.GetCellFromWorldPosition(Character);
-			Character.Position = Character.transform.position;
-			PlayerAnimation.Play("IdleBottom");
-		}
-	}
-
-	void Walk(Vector2Int direction)
-	{
-		if (Character == null || Character.ActiveTile == null)
+		if (!IsCharacterValid())
 			return;
 
-		if (InsideTileMover.Move(direction, Character))
+		var direction = GetInputVector();
+
+		if (Move(direction, Character, Speed))
 			return;
 
 		PlayerAnimation.Animate(direction, Speed);

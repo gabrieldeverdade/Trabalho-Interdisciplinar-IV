@@ -57,15 +57,24 @@ public class CharacterManager : MonoBehaviour
 			ClosestWorkbench = null;
 		}
 
-		if (ClosestWorkbench != null && Input.GetKeyDown(KeyCode.R))
+		if (Input.GetKeyDown(KeyCode.Alpha1)) CreateResource(0);
+		if (Input.GetKeyDown(KeyCode.Alpha2)) CreateResource(1);
+		if (Input.GetKeyDown(KeyCode.Alpha3)) CreateResource(2);
+	}
+
+	void CreateResource(int index)
+	{
+		if (ClosestWorkbench != null)
 		{
-			Debug.Log("WORKING");
-			var resource = BuildManager.CreateItem(0, Character.BaseInventory.ResourcesInBag);
-			if(resource != null)
+			Debug.Log($"WORKING ON {index}");
+			var resource = BuildManager.CreateItem(index, Character.BaseInventory.ResourcesInBag);
+			if (resource != null)
 			{
 				Character.BaseInventory.AddResource(resource, 1);
 				Debug.Log($"CREATED: {resource}");
-			} else {
+			}
+			else
+			{
 				Debug.Log($"NOT POSSIBLE");
 			}
 		}

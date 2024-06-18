@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEditor.Search;
 using UnityEngine;
 
+[Serializable]
 public class Attribute
 {
 	public int Current;
@@ -18,7 +19,7 @@ public class Attribute
 	public bool Remove(int amount)
 	{
 		Current -= amount;
-		return Current < 0;
+		return Current <= 0;
 	}
 
 	public bool Add(int amount)

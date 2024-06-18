@@ -13,7 +13,7 @@ public class TileSpecificMover
 		character.transform.position = Vector2.MoveTowards(character.transform.position, firstPosition, step);
 		character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, z);
 
-		if (Vector2.Distance(character.transform.position, firstPosition) < 0.5f)
+		if (Vector2.Distance(character.transform.position, firstPosition) < 0.01f)
 		{
 			renderer.RenderOnTile(tile);
 			return true;

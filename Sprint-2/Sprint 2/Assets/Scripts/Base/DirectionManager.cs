@@ -73,4 +73,21 @@ public static class DirectionManager
 
 		return (Direction)Enum.ToObject(typeof(Direction), Mathf.FloorToInt(stepCount));
 	}
+
+	public static Direction GetInverse(Direction direction)
+		=> direction switch
+		{
+			Direction.N => Direction.S,
+			Direction.NW => Direction.SE,
+			Direction.W => Direction.E,
+			Direction.SW => Direction.NE ,
+			Direction.S => Direction.N ,
+			Direction.SE => Direction.NW ,
+			Direction.E => Direction.W ,
+			Direction.NE => Direction.SW ,
+			_ => Direction.None,
+		};
+
+	public static Direction GetRandom()
+		=> (Direction)UnityEngine.Random.Range(0, 7);
 }

@@ -23,7 +23,7 @@ public class Projectile: MonoBehaviour
 		if(tag == "Enemy")
 		{
 			var character = collision.gameObject.GetComponent<Character>();
-			character.TakeHit();
+			//character.TakeHit();
 			Destroy(gameObject);
 		}
 	}

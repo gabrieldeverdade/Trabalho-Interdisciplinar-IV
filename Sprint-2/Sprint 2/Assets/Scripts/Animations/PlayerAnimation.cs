@@ -12,11 +12,15 @@ public class PlayerAnimation : MonoBehaviour
 
 	public void Play(string animationName)
 	{
+		if (Animator == null) return; 
+
 		Animator.Play(animationName);
 	}
 
 	public void Animate(Vector2Int direction, double speed)
 	{
+		if (Animator == null) return;
+
 		var latestDirection = DirectionManager.GetDirectionDegrees(direction);
 
 		if ((direction.magnitude / speed) > 0.001)

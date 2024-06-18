@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterAttributes))]
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PlayerAnimation))]
 [RequireComponent(typeof(BaseInventory))]
 public class Character : MonoBehaviour
 {
 	public bool IsPlayer = false;
+	public bool CanFly = false;
 
 	public BaseTile ActiveTile;
 	public Vector2 Position;
@@ -24,9 +24,9 @@ public class Character : MonoBehaviour
 		BaseInventory = GetComponent<BaseInventory>();
 	}
 
-	public void TakeHit()
+	public virtual void TakeHit(Character character)
 	{
-		if (!CharacterAttributes.TakeHitAndIsAlive(10, true))
+		if (!CharacterAttributes.TakeHitAndIsAlive(10, true, character))
 		{
 			if (IsPlayer)
 			{
@@ -41,18 +41,25 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		var tag = collision.gameObject.tag;
+		if (tag == "Enemy" && gameObject.tag == "Player")
+			TakeHit(collision.gameObject.GetComponent<Character>());
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		var tag = collision.gameObject.tag;
-
-		if (tag == "Enemy" && gameObject.tag != "Enemy")
-			TakeHit();
+		var canUseWeapon = collision.gameObject.GetComponent<RacketAttacker>() != null && collision.gameObject.GetComponent<RacketAttacker>().IsRotating;
+		if (tag == "Weapon" && gameObject.tag == "Enemy" && canUseWeapon)
+			TakeHit(collision.gameObject.GetComponent<Character>());
 	}
 
 	public void UpdatePosition(Vector2 position)
 	{
 		Position = position;
-		GetComponent<Rigidbody2D>().position = PositionWithHeight;
+		GetComponentInChildren<Rigidbody2D>().position = PositionWithHeight;
 		transform.position = new Vector3(transform.position.x, transform.position.y, ActiveTile.Height);
 		ActiveTile = MapManager.Instance.GetCellFromWorldPosition(position);
 	}

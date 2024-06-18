@@ -12,6 +12,7 @@ public abstract class BaseTile : MonoBehaviour
 	public Dictionary<Direction, BaseTile> Neighbours = new();
 
 	public bool ShowPathAmount = true;
+	public bool Flyable = false;
 	public bool Walkable = false;
 	public bool Climbable = false;
 	public bool Resourceable = false;
@@ -34,9 +35,6 @@ public abstract class BaseTile : MonoBehaviour
 	public TileBounds WorldPosition;
 
 
-
-	[SerializeField] List<Sprite> Directions = new List<Sprite>();
-
 	public void ShowTile()
 	{
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1, 0.7f);
@@ -44,8 +42,7 @@ public abstract class BaseTile : MonoBehaviour
 
 	public void HideTile()
 	{
-		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-		SetText("None");
+		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
 	}
 
 	public void SetText(string text)

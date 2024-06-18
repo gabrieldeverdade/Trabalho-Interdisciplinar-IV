@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class CharacterMover
 {
-	public bool Move(Vector2Int direction, Character character)
+	public bool Move(Vector2Int direction, Character character, float speed)
 	{
 		var directionInfo = DirectionManager.GetDirection(direction.x, direction.y);
 		
 		if (directionInfo.Direction == Direction.None)
 			return false;
 
-		var nextPosition = character.Position + (directionInfo.Direction2D * 0.02f);
+		var nextPosition = character.Position + (directionInfo.Direction2D * speed);
 
 		var nextTile = MapManager.Instance.GetCellFromWorldPosition(nextPosition);
 

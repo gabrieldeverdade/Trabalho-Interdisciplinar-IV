@@ -26,14 +26,14 @@ RectTransform:
   m_GameObject: {fileID: 6221326747929645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2817680439463742492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: 0.075}
+  m_AnchoredPosition: {x: -0.015, y: -0.022}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2606900419458618450
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -460604097
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2110166232, guid: 1ee5e2b6d0da02f4ebcfac5983c04d94, type: 3}
+  m_Sprite: {fileID: -1983115308, guid: 1ee5e2b6d0da02f4ebcfac5983c04d94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resource: {fileID: 0}
+  Resource: {fileID: 11400000, guid: 0d08b590157008942b3beae7d92768dc, type: 2}
   Quantity: 0
 --- !u!1 &1959026261528260779
 GameObject:
@@ -302,14 +302,14 @@ RectTransform:
   m_GameObject: {fileID: 2586543789625820648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7245807014564155070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.119, y: 0.112}
+  m_AnchoredPosition: {x: 0.073, y: 0.105}
   m_SizeDelta: {x: 0.9369, y: 0.9255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2235077890725129096
@@ -1187,3 +1187,4 @@ MonoBehaviour:
   - {fileID: 6852133152816723447}
   Receipts:
   - {fileID: 11400000, guid: 11c80a5f685022943b57afa69e265ca8, type: 2}
+  - {fileID: 11400000, guid: 3aa232c5f2b556d438572e0fb72087db, type: 2}

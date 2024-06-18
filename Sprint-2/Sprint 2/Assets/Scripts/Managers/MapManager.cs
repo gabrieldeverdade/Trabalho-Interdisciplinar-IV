@@ -32,6 +32,8 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
 	public void AddPoints(int point)
 	{
 		Points += point;
+
+		if(Text != null)
 		Text.text = Points.ToString();
 	}
 

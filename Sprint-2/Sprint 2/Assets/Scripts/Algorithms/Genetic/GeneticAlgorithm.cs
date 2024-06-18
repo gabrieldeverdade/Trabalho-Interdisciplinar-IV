@@ -22,7 +22,7 @@ public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 		for (var epochs = 0; epochs < 1000; epochs++)
 		{
 			var scenario = new Scenario(Random.Range(0, 10), Random.Range(0, 10), Random.Range(50, 200));
-			var member = new int[7] { 100, 3, 30, 20, 3, 60, 70 };
+			var member = new float[2] { 0.5f, 0.6f };
 			
 			var elite = Population.OrderByDescending(x => Merit(x, scenario)).Take(20);
 
@@ -61,8 +61,15 @@ public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 		for (var i = 0; i < 100; i++)
 		{
 			var enemyClass = beCollector.Decide(scenario) > RandomGenerator.GenerateDouble() ? "Colector" : "Atacker";
-			Debug.Log($"Resources: {scenario.Resources} Collectors: {scenario.Colectors} Chance: {beCollector.Decide(scenario) * 100}% class: {enemyClass}");
+			//Debug.Log($"Resources: {scenario.Resources} Collectors: {scenario.Colectors} Chance: {beCollector.Decide(scenario) * 100}% class: {enemyClass}");
 		}
 		return 0;
 	}
+}
+
+
+enum EnemyVariables
+{
+	PercentageToBeAttacker = 0,
+	PercentageToTransformToBeAttacker = 0,
 }

@@ -32,13 +32,13 @@ public class Slot : MonoBehaviour
 		if (Resource != null)
 		{
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
-			Debug.Log($"{spriteRenderer.name}");
+			//Debug.Log($"{spriteRenderer.name}");
 			spriteRenderer.enabled = true;
 			spriteRenderer.sprite = Resource.Tile.sprite;
 		} else
 		{
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
-			Debug.Log($"{spriteRenderer.name}");
+			//Debug.Log($"{spriteRenderer.name}");
 			spriteRenderer.enabled = true;
 			spriteRenderer.sprite = MapManager.Instance.WIPTile.sprite;
 		}

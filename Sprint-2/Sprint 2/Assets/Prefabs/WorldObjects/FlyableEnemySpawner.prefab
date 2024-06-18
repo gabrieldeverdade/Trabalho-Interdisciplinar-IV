@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2637540316999109075}
   - component: {fileID: 4120626768852860069}
   - component: {fileID: 1157184709278492729}
+  - component: {fileID: 7310605111434055020}
   m_Layer: 8
-  m_Name: EnemySpawner
+  m_Name: FlyableEnemySpawner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.97, y: 0.72, z: 0.96}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,13 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnTile: {fileID: 0}
   SpawnLocation: {fileID: 5845997419706260613}
-  EnemyPrefab: {fileID: 4765817817580429936, guid: 62bcfc6be1d6fd44a825b152270f0065, type: 3}
-  Destination: {fileID: 0}
-  IsKeyDown: 0
+  EnemyPrefab: {fileID: 571896995099335080, guid: 62bcfc6be1d6fd44a825b152270f0065, type: 3}
+  Destination: {fileID: 5462791835536212307, guid: 590457acc2ca5ff43a5d2613d8c0caaa, type: 3}
   SpawnTimer: 100
   TimeUntilSpawn: 0
-  SpawnX: -6
-  SpawnY: 7
 --- !u!212 &2637540316999109075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -170,3 +168,16 @@ CircleCollider2D:
   m_Offset: {x: -0.02221775, y: -0.1650464}
   serializedVersion: 2
   m_Radius: 0.4439268
+--- !u!114 &7310605111434055020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085883812801875032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f77196fe1d32074e96fac48033d5840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourcesInBag: []

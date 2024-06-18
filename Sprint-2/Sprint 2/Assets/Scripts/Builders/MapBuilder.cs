@@ -9,6 +9,7 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 	public List<Tile> UnwalkableTiles;
 	public List<Tile> ClimbableTiles;
 	public List<Tile> WorkBanches;
+	public List<Tile> UnflayableTiles;
 
 	public List<Resource> ResourceableTiles;
 
@@ -76,6 +77,7 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 
 
 		overlayTile.WorkBench = WorkBanches.Find(c => c == tile);
+		overlayTile.Flyable = !UnflayableTiles.Find(c => c == tile);
 		overlayTile.Walkable = !UnwalkableTiles.Find(c => c == tile);
 		overlayTile.Climbable = ClimbableTiles.Find(c => c == tile);
 	}

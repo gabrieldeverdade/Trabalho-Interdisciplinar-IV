@@ -26,25 +26,25 @@ public class SpawnManager: SingletonMonoBehaviour<SpawnManager>
 		return new List<BaseTile>();
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown("r"))
-		{
-			KruskalsPath.Clear();
-			var edges = SpawnAreas.SelectMany(c => c.ResourcesPath.Select(d => (c.SpawnTile, d.Value.Last()))).ToList();
-			var kruskal = new KruskalMST().Run(edges);
+	//private void Update()
+	//{
+	//	if (Input.GetKeyDown("r"))
+	//	{
+	//		KruskalsPath.Clear();
+	//		var edges = SpawnAreas.SelectMany(c => c.ResourcesPath.Select(d => (c.SpawnTile, d.Value.Last()))).ToList();
+	//		var kruskal = new KruskalMST().Run(edges);
 
-			if (kruskal != null)
-			{
-				var pathFinder = new PathFinderOptimized();
-				foreach (var krusk in kruskal)
-				{
-					var path = pathFinder.Find(krusk.start, krusk.end);
-					KruskalsPath.Add(path);
-				}
-			}
-		}
-	}
+	//		if (kruskal != null)
+	//		{
+	//			var pathFinder = new PathFinderOptimized();
+	//			foreach (var krusk in kruskal)
+	//			{
+	//				var path = pathFinder.Find(krusk.start, krusk.end);
+	//				KruskalsPath.Add(path);
+	//			}
+	//		}
+	//	}
+	//}
 
 	private void OnDrawGizmos()
 	{
