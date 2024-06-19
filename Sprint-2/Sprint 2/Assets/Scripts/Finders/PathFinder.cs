@@ -35,7 +35,9 @@ public class PathFinder
 				if (!(flyable || walkable) || closed.Contains(neighbour) || Mathf.Abs(current.GridLocation.z - neighbour.GridLocation.z) > JumpHeight )
 					continue;
 
+				//Debug.Log("CALCULATING  G");
 				neighbour.G = GetManhattanDistance(start, neighbour);
+				//Debug.Log("CALCULATING  H");
 				neighbour.H = GetManhattanDistance(end, neighbour);
 				neighbour.Previous = current;
 				 
@@ -61,6 +63,9 @@ public class PathFinder
 	}
 
 	int GetManhattanDistance(BaseTile start, BaseTile neighbor)
-		=> Mathf.Abs(start.GridLocation.x - neighbor.GridLocation.x) + Mathf.Abs(start.GridLocation.y - neighbor.GridLocation.y);
+	{
+		//Debug.Log($"{start} / {neighbor}");
+		return Mathf.Abs(start.GridLocation.x - neighbor.GridLocation.x) + Mathf.Abs(start.GridLocation.y - neighbor.GridLocation.y);
+	}
 
 }

@@ -12,6 +12,8 @@ public class SpawnArea: MonoBehaviour
 
 	private void Update()
 	{
+		InitializeActiveTile();
+
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			var enemy = Instantiate(EnemyPrefab, SpawnLocation);
@@ -30,4 +32,6 @@ public class SpawnArea: MonoBehaviour
 			//enemy.GetComponent<Enemy>().SetJob();
 		}
 	}
+	void InitializeActiveTile() { if (SpawnTile == null) SpawnTile = MapManager.Instance.GetCellFromWorldPosition(SpawnLocation.position); }
+
 }

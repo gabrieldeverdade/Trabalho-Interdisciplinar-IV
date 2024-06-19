@@ -8,9 +8,11 @@ public abstract class BaseController: InputBaseController
 
 	protected List<BaseTile> FindPathBetween(Character enemy, Character destination)
 	{
+		Debug.Log($"TRY FOUND PATH TO {destination}");
 		if (enemy != null && enemy.ActiveTile != null && destination != null && destination.ActiveTile != null)
 		{
 			BeforeUpdatePath(Path);
+			Debug.Log("FOUND PATH");
 			Path = new PathFinder().Find(enemy, destination, 0);
 			AfterUpdatePath(Path);
 		}

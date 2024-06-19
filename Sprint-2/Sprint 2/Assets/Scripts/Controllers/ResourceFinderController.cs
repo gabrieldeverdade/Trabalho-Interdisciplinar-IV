@@ -1,10 +1,14 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class ResourceFinderController : RandomMoveController
 {
 	[SerializeField] bool HasFindResource = false;
-	BaseTile FocusedResource;
+	[SerializeField] BaseTile FocusedResource;
+
+	bool GoingToResource = false;
+	bool GoingToSpawn = false;
 
 	protected override void FixedUpdate()
 	{
@@ -19,7 +23,7 @@ public class ResourceFinderController : RandomMoveController
 		}
 		else if (Path.Count == 0)
 		{
-			Debug.Log($"VERIFYING PROXIMITY: {Path.Count}");
+			//Debug.Log($"VERIFYING PROXIMITY: {Path.Count}");
 			VerifyProximityToResource();
 			VerifyProximityToSpawn();
 		}
@@ -33,15 +37,16 @@ public class ResourceFinderController : RandomMoveController
 
 		if (FocusedResource != null) return;
 
-		var tiles = new RangeFinder().GetTilesInRange(Character.ActiveTile, 3);
+		var tiles = new RangeFinder().GetTilesInRange(Character.ActiveTile, 1);
 		var resourceTile = tiles.FirstOrDefault(t => t.Resourceable);
 
 		if (resourceTile != null)
 		{
-			Debug.Log("FOUND RESOURCE");
+			//Debug.Log("FOUND RESOURCE");
 			FocusedResource = resourceTile;
 			Path = new PathFinder().Find(Character, Character.ActiveTile, FocusedResource, 0);
-			Debug.Log($"FOUND PATH: {Path.Count}");
+			//Debug.Log($"FOUND PATH: {Path.Count}");
+			GoingToResource = true;
 			HasFindResource = true;
 		}
 	}
@@ -49,8 +54,11 @@ public class ResourceFinderController : RandomMoveController
 	void VerifyProximityToResource()
 	{
 		var tiles = new RangeFinder().GetTilesInRange(Character.ActiveTile, 1);
-		if (tiles.Any(t => t == FocusedResource))
+		if (GoingToResource && tiles.Any(t => t == FocusedResource))
 		{
+			GoingToSpawn = true;
+			GoingToResource = false;
+
 			Debug.Log("GOING TO RESOURCE");
 			var enemy = Character.GetComponent<Enemy>();
 			enemy.GotResource(FocusedResource.Resource, 10);
@@ -62,12 +70,22 @@ public class ResourceFinderController : RandomMoveController
 	{
 		var tiles = new RangeFinder().GetTilesInRange(Character.ActiveTile, 1);
 		var enemy = Character.GetComponent<Enemy>();
-		if (tiles.Any(t => t == enemy.Spawn.SpawnTile))
+		if (GoingToSpawn && tiles.Any(t => t == enemy.Spawn.SpawnTile))
 		{
+			GoingToSpawn = false;
+			GoingToResource = true;
+
+			Debug.Log("GOING TO SPAWN");
 			enemy.Spawn.GetComponent<BaseInventory>().AddResource(enemy.CurrentResource, enemy.ResourceAmount);
 			enemy.DropResource();
 
-			Path = new PathFinder().Find(Character, Character.ActiveTile, FocusedResource, 0);
+			var walkableNeighbour = FocusedResource.Neighbours.Values.FirstOrDefault(c => c.Walkable);
+
+			if (walkableNeighbour.Equals(default(KeyValuePair<Direction, BaseTile>))) return;
+
+			var resourceTile = Character.CanFly ? FocusedResource : walkableNeighbour;
+
+			Path = new PathFinder().Find(Character, Character.ActiveTile, resourceTile, 0);
 		}
 	}
 
