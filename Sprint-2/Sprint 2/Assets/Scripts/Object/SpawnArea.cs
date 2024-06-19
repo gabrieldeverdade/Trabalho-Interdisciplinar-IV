@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpawnArea: MonoBehaviour
 {
@@ -7,31 +9,40 @@ public class SpawnArea: MonoBehaviour
 	[SerializeField] Character EnemyPrefab;
 	[SerializeField] Character Destination;
 
+	public List<Enemy> Enemies = new List<Enemy>();
+
 	public float SpawnTimer = 2;
 	public float TimeUntilSpawn = 0;
 
 	private void Update()
 	{
 		InitializeActiveTile();
-
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-			var enemy = Instantiate(EnemyPrefab, SpawnLocation);
-			enemy.GetComponent<CharacterStalkController>().SetDestination(Destination);
-			enemy.GetComponent<Enemy>().Spawn = this;
-		}
 	}
 
-	public void Spawn(int[] enemies)
+	public void Spawn(List<float[]> enemies)
 	{
-		for(var i = 0; i < enemies.Length; i++)
+		for(var i = 0; i < enemies.Count; i++)
 		{
 			var enemy = Instantiate(EnemyPrefab, SpawnLocation);
-			//enemy.GetComponent<CharacterStalkController>().SetDestination(Destination);
-			enemy.GetComponent<Enemy>().Spawn = this;
-			//enemy.GetComponent<Enemy>().SetJob();
+
+			bool isAttacker = Random.Range(0f, 1f) > 0.5;
+			enemy.GetComponent<Enemy>().SetJob(this, isAttacker);
+
+			if (isAttacker)
+			{
+				enemy.GetComponent<ResourceFinderController>().enabled = false;
+				enemy.GetComponent<CharacterStalkController>().enabled = true;
+				enemy.GetComponent<CharacterStalkController>().SetDestination(Destination);
+			}
+			else
+			{
+				enemy.GetComponent<ResourceFinderController>().enabled = true;
+				enemy.GetComponent<CharacterStalkController>().enabled = false;
+			}
+			Enemies.Add(enemy.GetComponent<Enemy>());
 		}
 	}
+
 	void InitializeActiveTile() { if (SpawnTile == null) SpawnTile = MapManager.Instance.GetCellFromWorldPosition(SpawnLocation.position); }
 
 }

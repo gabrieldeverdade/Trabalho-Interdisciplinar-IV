@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pickaxe
   Description: Picareta
-  Tile: {fileID: 11400000, guid: 933c413830ecf374d87328e3f4ae54ff, type: 2}
+  Tile: {fileID: 11400000, guid: 923398785458a1043a4f4610ca2e4e13, type: 2}
   Amount: 10000
+  CanHitEnemies: 0
+  Attack: 10
+  CanGetResources: 1
+  GettableResources:
+  - {fileID: 11400000, guid: 2fb8242b8f13daa4598d467ecddbeb2a, type: 2}
+  - {fileID: 11400000, guid: 949227458932f434b969cc3664c90433, type: 2}

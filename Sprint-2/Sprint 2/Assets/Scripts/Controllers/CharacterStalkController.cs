@@ -1,29 +1,35 @@
 
+using System.Linq;
 using UnityEngine;
 
-public class CharacterStalkController : BaseController
+public class CharacterStalkController : RandomMoveController
 {
-	Enemy Enemy;
 	public Character Destination;
+	bool FoundCharacter = false;
 
-	void Start()
+	protected override void FixedUpdate()
 	{
-		Enemy = GetComponent<Enemy>();
-	}
-
-	void FixedUpdate()
-	{
-		Debug.Log("Searching");
 		InitializeActiveTile();
-		TryMoveEnemy();
-		FindNewPath();
+
+		if (!FoundCharacter)
+		{
+			base.FixedUpdate();
+			TryToFindCharacter();
+		}
+		else
+		{ 
+			TryMoveEnemy();
+			FindNewPath();
+		}
 	}
 
-	void InitializeActiveTile() { if (Enemy.ActiveTile == null) Enemy.ActiveTile = MapManager.Instance.GetCellFromWorldPosition(Enemy); }
-
-	void TryMoveEnemy() { if(Path.Count > 0) new TileSpecificMover().Move(Enemy, 1, Path[0]); }
-
-	void FindNewPath() { if (Enemy != null && Enemy.ActiveTile != null) FindPathBetween(Enemy, Destination); }
+	void TryToFindCharacter()
+	{
+		if (new RangeFinder().GetTilesInRange(Character.ActiveTile, 3).Any(c => Destination.ActiveTile == c))
+			FoundCharacter = true;
+	}
+		
+	void FindNewPath() { if (Character != null && Character.ActiveTile != null) FindPathBetween(Character, Destination); }
 
 	public void SetDestination(Character character) => Destination = character;
 }

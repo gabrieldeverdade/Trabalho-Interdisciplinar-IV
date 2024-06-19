@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class InventoryManager : MonoBehaviour
 {
 	[SerializeField] Slot[] Slots;
 	[SerializeField] Character Character;
+	[SerializeField] CharacterManager CharacterManager;
+
 
 	void Start()
 	{
@@ -26,10 +29,11 @@ public class InventoryManager : MonoBehaviour
 
 				Slots[i].Resource = itemsInBag[i].Resource;
 				Slots[i].Quantity = itemsInBag[i].Amount;
+				Slots[i].Selected = CharacterManager.SelectedWeaponIndex == i;
 			}
 		}
 
-		foreach(var slot in Slots)
+		foreach (var slot in Slots)
 			slot.Draw();
 	}
 

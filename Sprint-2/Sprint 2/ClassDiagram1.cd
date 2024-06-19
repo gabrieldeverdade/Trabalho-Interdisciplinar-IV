@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseController" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAACAAAAAAIAAAAAAAABAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\Base\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterBaseController&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKgAAAAAAAIQAAAEAAAAAAEEAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\Base\CharacterBaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputBaseController" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\Base\InputBaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterStalkController" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAiAAEAAAAAAAAAAAAAAAAAAEAAAAAEAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\CharacterStalkController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyboardController" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\KeyboardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RandomMoveController" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAEAAAAAAAAAAACAAAAAAAAAAAgAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\RandomMoveController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceFinderController" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAABAAAAAQAIAAAAAAAAAAAAIAQgAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\ResourceFinderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

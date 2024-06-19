@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileToShow: {fileID: 0}
+  Resource: {fileID: 0}
   Quantity: 0
 --- !u!1 &1334866220423153303
 GameObject:
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileToShow: {fileID: 0}
+  Resource: {fileID: 0}
   Quantity: 0
 --- !u!1 &4647159850725512861
 GameObject:
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileToShow: {fileID: 0}
+  Resource: {fileID: 0}
   Quantity: 0
 --- !u!1 &5767699726660222348
 GameObject:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileToShow: {fileID: 0}
+  Resource: {fileID: 0}
   Quantity: 0
 --- !u!1 &5827640734962765393
 GameObject:
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4741ef03b3c14741ab670a4eb47196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileToShow: {fileID: 0}
+  Resource: {fileID: 0}
   Quantity: 0
 --- !u!1 &7947940504927222151
 GameObject:

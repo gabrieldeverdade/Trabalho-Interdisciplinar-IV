@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour
 {
 	public Resource Resource;
 	public int Quantity;
+	public bool Selected;
 
 	public void ShowSlot()
 	{
@@ -40,8 +41,10 @@ public class Slot : MonoBehaviour
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
 			//Debug.Log($"{spriteRenderer.name}");
 			spriteRenderer.enabled = true;
-			spriteRenderer.sprite = MapManager.Instance.WIPTile.sprite;
+			//spriteRenderer.sprite = MapManager.Instance.WIPTile.sprite;
 		}
+
+		GetComponentsInChildren<SpriteRenderer>()[0].color = Selected ? Color.red : Color.white;
 	}
 
 	public void Hide()

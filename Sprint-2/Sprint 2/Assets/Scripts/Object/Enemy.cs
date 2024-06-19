@@ -1,47 +1,81 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+[Serializable]
+public class ResourceStats
+{
+	public Resource Resource;
+	public int Amount;
+
+	public ResourceStats(Resource resource, int amount)
+	{
+		Resource = resource;
+		Amount = amount;
+	}
+
+	public void SetResource(Resource resource, int amount)
+	{
+		Resource = resource;
+		Amount = amount;
+	}
+
+	public bool ConsumeResource(Resource resource, int amount)
+	{
+		if (Resource != resource || Amount - amount < 0)
+			return false;
+
+		Amount -= amount;
+		return true;
+	}
+}
 
 public class Enemy : Character
 {
-	int TimeToLive = 90;
-	float CurrentLife = 0;
-	public int Points = 0;
-	public bool IsAttacker = false;
+	int Range = 3;
+	public int Points { get; private set; } = 0;
+	public bool IsAttacker { get; private set; }
+	Attribute LifeSpan = new Attribute(90);
+	ResourceStats CurrentResource = null;
+	
+	public SpawnArea Spawn { get; private set; }
 
-	public Resource CurrentResource;
-	public int ResourceAmount;
-
-	public SpawnArea Spawn;
-
-	public override void TakeHit(Character character)
-	{
-		base.TakeHit(character);
-	}
+	[SerializeField] ResourceStats ResourceToWalk;
 
 	public void FixedUpdate()
 	{
-		CurrentLife += Time.deltaTime;
-
-		if(CurrentLife > TimeToLive)
+		if (LifeSpan.Remove(Time.deltaTime))
 			Destroy(gameObject);
 	}
 
+	public bool CanWalk()
+		=> ResourceToWalk.ConsumeResource(ResourceToWalk.Resource, 10);
+
+	public override void TakeHit(Character character)
+		=> base.TakeHit(character);
+
+	public void HitCharacter()
+		=> AttakedPlayer();
+
 	public void GotResource(Resource carryResource, int amount)
 	{
-		CurrentResource = carryResource;
-		ResourceAmount += amount;
+		CurrentResource = new ResourceStats(carryResource, amount);
 	}
 
-	public void DropResource()
+	public ResourceStats DropResource()
 	{
+		CollectedResource();
+		var resourceToDrop = CurrentResource;
 		CurrentResource = null;
-		ResourceAmount = 0;
-		Points++;
+		return resourceToDrop;
 	}
 
-	public void AttakedPlayer() => Points++;
+	void AttakedPlayer() { if (IsAttacker) Points++; else Points--; }
+	void CollectedResource() { if (IsAttacker) Points--; else Points++; }
 
-	public void SetJob(bool isAttacker)
+	public void SetJob(SpawnArea spawn,bool isAttacker)
 	{
 		IsAttacker = isAttacker;
+		Spawn = spawn;
+		Points = 0;
 	}
 }

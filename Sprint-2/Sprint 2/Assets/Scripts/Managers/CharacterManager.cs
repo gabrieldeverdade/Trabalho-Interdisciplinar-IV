@@ -9,12 +9,14 @@ public class CharacterManager : MonoBehaviour
 
 	[SerializeField] BuildManager BuildManager;
 
+	public int SelectedWeaponIndex = 0;
+
 	private void Update()
 	{
 		CheckNearbyResources();
 		CheckWorkbench();
 	}
-	
+
 	void CheckNearbyResources()
 	{
 		if (ClosestResource != null)
@@ -60,6 +62,9 @@ public class CharacterManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha1)) CreateResource(0);
 		if (Input.GetKeyDown(KeyCode.Alpha2)) CreateResource(1);
 		if (Input.GetKeyDown(KeyCode.Alpha3)) CreateResource(2);
+		if (Input.GetKeyDown(KeyCode.Alpha4)) CreateResource(3);
+		if (Input.GetKeyDown(KeyCode.Alpha5)) CreateResource(4);
+		if (Input.GetKeyDown(KeyCode.Alpha6)) CreateResource(5);
 	}
 
 	void CreateResource(int index)
@@ -77,6 +82,10 @@ public class CharacterManager : MonoBehaviour
 			{
 				Debug.Log($"NOT POSSIBLE");
 			}
+		}
+		else 
+		{
+			SelectedWeaponIndex = index;
 		}
 	}
 }

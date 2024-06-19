@@ -24,7 +24,6 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 		if(CurrentGenerationTime > TimeUntilNextGeneration)
 		{
 			CurrentGenerationTime = 0;
-			GeneticAlgorithm.GenerateEpoch();
 		}
 	}
 

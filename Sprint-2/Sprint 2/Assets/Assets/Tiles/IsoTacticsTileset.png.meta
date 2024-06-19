@@ -1116,7 +1116,7 @@ TextureImporter:
       name: IsoTacticsTileset_48
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -1129,6 +1129,69 @@ TextureImporter:
       bones: []
       spriteID: 1212ac52abd45bd4887095702855f494
       internalID: -1222347451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IsoTacticsTileset_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072af8e765fac854191ab79b006d26d0
+      internalID: 1139702963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IsoTacticsTileset_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66161f630b4eb9c4bb5234bc64695f5c
+      internalID: -173889441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IsoTacticsTileset_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46bffb610b396b41ae46dea4d66320a
+      internalID: -293615487
       vertices: []
       indices: 
       edges: []
@@ -1188,7 +1251,10 @@ TextureImporter:
       IsoTacticsTileset_46: 481970028
       IsoTacticsTileset_47: -280315425
       IsoTacticsTileset_48: -1222347451
+      IsoTacticsTileset_49: 1139702963
       IsoTacticsTileset_5: 1439564952
+      IsoTacticsTileset_50: -173889441
+      IsoTacticsTileset_51: -293615487
       IsoTacticsTileset_6: 1797716018
       IsoTacticsTileset_7: -223147839
       IsoTacticsTileset_8: -116170557

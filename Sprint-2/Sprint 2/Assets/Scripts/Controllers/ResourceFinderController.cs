@@ -59,7 +59,7 @@ public class ResourceFinderController : RandomMoveController
 			GoingToSpawn = true;
 			GoingToResource = false;
 
-			Debug.Log("GOING TO RESOURCE");
+			//Debug.Log("GOING TO RESOURCE");
 			var enemy = Character.GetComponent<Enemy>();
 			enemy.GotResource(FocusedResource.Resource, 10);
 			Path = new PathFinder().Find(Character, Character.ActiveTile, enemy.Spawn.SpawnTile, 0);
@@ -75,8 +75,10 @@ public class ResourceFinderController : RandomMoveController
 			GoingToSpawn = false;
 			GoingToResource = true;
 
-			Debug.Log("GOING TO SPAWN");
-			enemy.Spawn.GetComponent<BaseInventory>().AddResource(enemy.CurrentResource, enemy.ResourceAmount);
+			//Debug.Log("GOING TO SPAWN");
+			var resource = enemy.DropResource();
+
+			enemy.Spawn.GetComponent<BaseInventory>().AddResource(resource.Resource, resource.Amount);
 			enemy.DropResource();
 
 			var walkableNeighbour = FocusedResource.Neighbours.Values.FirstOrDefault(c => c.Walkable);

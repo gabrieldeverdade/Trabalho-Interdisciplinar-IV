@@ -32,7 +32,6 @@ public class RandomMoveController : CharacterBaseController<Enemy>
 
 			while (!walkableTiles.ContainsKey(randomDirection))
 			{
-				Debug.Log($"WHILEEE {amountOfTryies}");
 				randomDirection = DirectionManager.GetRandom();
 				amountOfTryies++;
 

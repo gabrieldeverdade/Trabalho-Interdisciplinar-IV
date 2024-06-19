@@ -9,16 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5113571325736075509}
+  - component: {fileID: 571896995099335080}
+  - component: {fileID: 4493044085260147012}
   - component: {fileID: 4838870746496263262}
   - component: {fileID: 3363480512817208931}
   - component: {fileID: 6840872726772428470}
   - component: {fileID: 4201044503704767853}
-  - component: {fileID: 4493044085260147012}
   - component: {fileID: 6850619057863159573}
   - component: {fileID: 5332553161546351515}
   - component: {fileID: 5327952012903291034}
   - component: {fileID: 659394506749327840}
-  - component: {fileID: 571896995099335080}
   - component: {fileID: 647669375200971290}
   m_Layer: 8
   m_Name: FlyableEnemy
@@ -42,6 +42,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571896995099335080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9156594022518956601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b39b4573b75ea94d93a11eed26a948a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayer: 0
+  CanFly: 1
+  ActiveTile: {fileID: 0}
+  Position: {x: 0, y: 0}
+  BaseInventory: {fileID: 0}
+  ResourceToWalk:
+    Resource: {fileID: 11400000, guid: 806a3badf66aa3f45b3ff8ba014cf3fd, type: 2}
+    Amount: 2
+--- !u!114 &4493044085260147012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9156594022518956601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fec1ef113114f6458c4f8e842271bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health:
+    Current: 10
+    Start: 10
+  IsDamaging: 0
+  JumpHeight: 1
 --- !u!114 &4838870746496263262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,23 +259,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4493044085260147012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9156594022518956601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fec1ef113114f6458c4f8e842271bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health:
-    Current: 10
-    Start: 10
-  IsDamaging: 0
-  JumpHeight: 1
 --- !u!212 &6850619057863159573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -331,28 +351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 0}
---- !u!114 &571896995099335080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9156594022518956601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b39b4573b75ea94d93a11eed26a948a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayer: 0
-  CanFly: 1
-  ActiveTile: {fileID: 0}
-  Position: {x: 0, y: 0}
-  BaseInventory: {fileID: 0}
-  Points: 0
-  IsAttacker: 0
-  CurrentResource: {fileID: 0}
-  ResourceAmount: 0
-  Spawn: {fileID: 0}
 --- !u!114 &647669375200971290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,10 +358,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9156594022518956601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 376bb2886e6c40845a384010287f3090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTime: 0
   HasFindResource: 0
+  FocusedResource: {fileID: 0}
