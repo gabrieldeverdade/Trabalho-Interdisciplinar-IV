@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 84ccbd1ad8ed5d6439be9ed386fede5e
+  - enabled: 1
+    path: Assets/Scenes/dunas.unity
+    guid: 5989e86fc5821a641b2fe9e74d7309b0
+  - enabled: 1
+    path: Assets/Scenes/floresta.unity
+    guid: c92205697d438d947bc2b12c2f2842b5
+  - enabled: 1
+    path: Assets/Scenes/pantano.unity
+    guid: 7c22d2e00260b0c49acef96ae981aa97
   m_configObjects: {}
