@@ -1196,6 +1196,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IsoTacticsTileset_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0821e51d7a5b16149996b7d5d6a86117
+      internalID: -358520809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1255,6 +1276,7 @@ TextureImporter:
       IsoTacticsTileset_5: 1439564952
       IsoTacticsTileset_50: -173889441
       IsoTacticsTileset_51: -293615487
+      IsoTacticsTileset_52: -358520809
       IsoTacticsTileset_6: 1797716018
       IsoTacticsTileset_7: -223147839
       IsoTacticsTileset_8: -116170557

@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +12,24 @@ public class CharacterManager : MonoBehaviour
 
 	[SerializeField] BuildManager BuildManager;
 
-	public int SelectedWeaponIndex = 0;
+	public int SelectedWeaponIndex = -1;
 
 	private void Update()
 	{
 		CheckNearbyResources();
 		CheckWorkbench();
+		CheckWeaponOnHand();
+	}
+
+	void CheckWeaponOnHand()
+	{
+		if (IsTool(SelectedWeaponIndex))
+		{
+			var racketAttacker = GetComponentInChildren<RacketAttacker>();
+			var sprite = racketAttacker.GetComponentInChildren<SpriteRenderer>();
+
+			sprite.sprite = Character.BaseInventory.ResourcesInBag.ElementAt(SelectedWeaponIndex).Resource.Tile.sprite;
+		}
 	}
 
 	void CheckNearbyResources()
@@ -28,6 +43,8 @@ public class CharacterManager : MonoBehaviour
 		if (Character.HasResourceNearby())
 		{
 			ClosestResource = Character.GetClosestResource();
+
+			if(ClosestResource )
 			ClosestResource.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 			ClosestResource.GetComponentsInChildren<Text>()[1].enabled = true;
 		}
@@ -82,10 +99,19 @@ public class CharacterManager : MonoBehaviour
 			{
 				Debug.Log($"NOT POSSIBLE");
 			}
+			return;
 		}
-		else 
-		{
+		else if (IsTool(index))
+		{ 
 			SelectedWeaponIndex = index;
 		}
+	}
+
+	bool IsTool(int index)
+	{
+		if (index < 0) return false;
+
+		var resourceAtIndex = Character.BaseInventory.ResourcesInBag.ElementAt(index);
+		return resourceAtIndex.Resource.CanHitEnemies || resourceAtIndex.Resource.CanGetResources;
 	}
 }
