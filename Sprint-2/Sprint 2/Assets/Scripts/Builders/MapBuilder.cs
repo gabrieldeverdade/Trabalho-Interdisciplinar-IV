@@ -41,6 +41,7 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 		if (Tilemap.HasTile(tileLocation) && !MapManager.Instance.Map.ContainsKey(tileKey))
 		{
 			var overlayTile = Instantiate(OverlayPrefab, Tilemap.transform);
+			overlayTile.enabled = false;
 			UpdateOverlayStatus(overlayTile, tileLocation, z);
 			MapManager.Instance.Map.Add(tileKey, overlayTile);
 		}
@@ -52,7 +53,7 @@ public class MapBuilder : SingletonMonoBehaviour<MapBuilder>
 		var cellWorldPosition = Tilemap.GetCellCenterWorld(tilemapLocation);
 
 		overlayTile.Height = tileHeight;
-
+		overlayTile.GetComponent<SpriteRenderer>().enabled = false;
 		overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y + 0.0001f, cellWorldPosition.z + 1);
 		overlayTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.0f);
 		overlayTile.GetComponent<SpriteRenderer>().sortingOrder = Tilemap.GetComponent<TilemapRenderer>().sortingOrder + (int)cellWorldPosition.z;

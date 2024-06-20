@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -33,15 +34,17 @@ public class Slot : MonoBehaviour
 		if (Resource != null)
 		{
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
-			//Debug.Log($"{spriteRenderer.name}");
+
 			spriteRenderer.enabled = true;
 			spriteRenderer.sprite = Resource.Tile.sprite;
-		} else
+
+			var spriteRenderer2 = GetComponentsInChildren<SpriteRenderer>().ElementAtOrDefault(2);
+			if(spriteRenderer2 != null)  spriteRenderer2.enabled = true;
+		}
+		else
 		{
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
-			//Debug.Log($"{spriteRenderer.name}");
 			spriteRenderer.enabled = true;
-			//spriteRenderer.sprite = MapManager.Instance.WIPTile.sprite;
 		}
 
 		GetComponentsInChildren<SpriteRenderer>()[0].color = Selected ? Color.red : Color.white;
@@ -52,8 +55,10 @@ public class Slot : MonoBehaviour
 		var text = GetComponentInChildren<Text>();
 		if(text != null)  text.enabled = false;
 
-		var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
+		var spriteRenderer = GetComponentsInChildren<SpriteRenderer>().ElementAtOrDefault(1);
 		if(spriteRenderer != null) spriteRenderer.enabled = false;
 
+		var spriteRenderer2 = GetComponentsInChildren<SpriteRenderer>().ElementAtOrDefault(2);
+		if (spriteRenderer2 != null) spriteRenderer2.enabled = false;
 	}
 }

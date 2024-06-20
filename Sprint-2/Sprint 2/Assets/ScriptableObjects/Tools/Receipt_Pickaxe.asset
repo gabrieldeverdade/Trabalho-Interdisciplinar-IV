@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: d316e489700676a409fec93ff5a9a800, type: 2}
   Items:
-  - Tile: {fileID: 11400000, guid: 437301207b655df40989339b9e3c1588, type: 2}
-    Amount: 3
   - Tile: {fileID: 11400000, guid: ba0c9654b346d4e4c94e0f6cdcbabcfb, type: 2}
-    Amount: 1
+    Amount: 40
