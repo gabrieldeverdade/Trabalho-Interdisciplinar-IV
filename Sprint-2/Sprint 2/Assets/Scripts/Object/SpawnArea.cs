@@ -11,8 +11,27 @@ public class SpawnArea: MonoBehaviour
 
 	public List<Enemy> Enemies = new List<Enemy>();
 
-	public float SpawnTimer = 2;
-	public float TimeUntilSpawn = 0;
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		var tag = collision.gameObject.tag;
+
+		if (tag == "Weapon")
+		{
+			var character = gameObject.GetComponentInParent<CharacterManager>();
+
+			if (character == null) return;
+
+			var weapon = character.GetCurrentWeapon();
+
+			if (weapon == null || !weapon.CanHitEnemies) return;
+
+			if (!GetComponent<CharacterAttributes>().TakeHitAndIsAlive(weapon.Attack, false))
+			{
+				MapManager.Instance.AddPoints(500);
+				Destroy(gameObject);
+			}
+		}
+	}
 
 	private void Update()
 	{
@@ -25,10 +44,10 @@ public class SpawnArea: MonoBehaviour
 		{
 			var enemy = Instantiate(EnemyPrefab, SpawnLocation);
 
-			bool isAttacker = Random.Range(0f, 1f) > 0.5;
-			enemy.GetComponent<Enemy>().SetJob(this, isAttacker);
+			var enemyComponent = enemy.GetComponent<Enemy>();
+			enemyComponent.SetJob(this, enemies[i]);
 
-			if (isAttacker)
+			if (enemyComponent.IsAttacker)
 			{
 				enemy.GetComponent<ResourceFinderController>().enabled = false;
 				enemy.GetComponent<CharacterStalkController>().enabled = true;

@@ -32,10 +32,14 @@ public class ResourceStats
 public class Enemy : Character
 {
 	int Range = 3;
-	public int Points { get; private set; } = 0;
-	public bool IsAttacker { get; private set; }
-	Attribute LifeSpan = new Attribute(90);
+	Attribute LifeSpan = new Attribute(120);
 	ResourceStats CurrentResource = null;
+
+	[SerializeField] int CurrentPoints => Points;
+
+	public float[] Members;
+	[SerializeField] public bool IsAttacker { get; private set; }
+	[SerializeField] public bool CanChangeToAttacker { get; private set; }
 	
 	public SpawnArea Spawn { get; private set; }
 
@@ -72,9 +76,11 @@ public class Enemy : Character
 	void AttakedPlayer() { if (IsAttacker) Points++; else Points--; }
 	void CollectedResource() { if (IsAttacker) Points--; else Points++; }
 
-	public void SetJob(SpawnArea spawn,bool isAttacker)
+	public void SetJob(SpawnArea spawn, float[] members)
 	{
-		IsAttacker = isAttacker;
+		Members = members;
+		IsAttacker = new UnityRandomGenerator().GenerateDouble() > members[0];
+		CanChangeToAttacker = new UnityRandomGenerator().GenerateDouble() > members[1];
 		Spawn = spawn;
 		Points = 0;
 	}

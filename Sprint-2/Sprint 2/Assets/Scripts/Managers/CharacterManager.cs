@@ -8,10 +8,14 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
 	[SerializeField] BaseTile ClosestResource;
+	[SerializeField] BaseTile ClosestWater;
+
 	[SerializeField] BaseTile ClosestWorkbench;
 	[SerializeField] Character Character;
 
 	[SerializeField] BuildManager BuildManager;
+
+	public Text Text;
 
 	public int SelectedWeaponIndex = -1;
 	public int LatestWeaponIndex = -2;
@@ -19,10 +23,14 @@ public class CharacterManager : MonoBehaviour
 
 	private void Update()
 	{
+		CheckNearbyWater();
 		CheckNearbyResources();
 		CheckWorkbench();
 		CheckWeaponOnHand();
 	}
+
+	public Resource GetCurrentWeapon()
+		=> Character.BaseInventory.ResourcesInBag.ElementAt(SelectedWeaponIndex).Resource;
 
 	void CheckWeaponOnHand()
 	{
@@ -34,6 +42,38 @@ public class CharacterManager : MonoBehaviour
 
 			sprite.sprite = Character.BaseInventory.ResourcesInBag.ElementAt(SelectedWeaponIndex).Resource.Tile.sprite;
 		}
+	}
+
+	void ClearOnHand()
+	{
+		LatestWeaponIndex = -2; 
+		SelectedWeaponIndex = -1;
+		var racketAttacker = GetComponentInChildren<RacketAttacker>();
+		var sprite = racketAttacker.GetComponentInChildren<SpriteRenderer>();
+
+		sprite.sprite = null;
+	}
+
+	void CheckNearbyWater()
+	{
+		if (Character.HasResourceNearby())
+		{
+			ClosestWater = Character.GetClosestWater(new List<BaseTile>());
+
+			if(ClosestWater != null)
+			{
+				ClosestWater.enabled = true;
+				ClosestWater.GetComponent<SpriteRenderer>().enabled = true;
+				ClosestWater.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+			}
+		} 
+		else
+		{
+			ClosestWater = null;
+		}
+
+		if (ClosestWater && Input.GetKeyDown(KeyCode.E))
+			Character.AddStamina(20);
 	}
 
 	void CheckNearbyResources()
@@ -67,12 +107,17 @@ public class CharacterManager : MonoBehaviour
 				closestResources.Add(ClosestResource);
 			}
 		}
+		else
+		{
+			ClosestResource = null;
+		}
 
 		if (ClosestResource != null && Input.GetKeyDown(KeyCode.Space))
 		{
-			Debug.Log("CONSUMING");
-			Character.BaseInventory.AddResource(ClosestResource.Resource, 1);
+			if(Character.ConsumeStamina(1))
+				Character.BaseInventory.AddResource(ClosestResource.Resource, 1);
 		}
+
 	}
 	
 	void CheckWorkbench()
@@ -98,11 +143,17 @@ public class CharacterManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha4)) CreateResource(3);
 		if (Input.GetKeyDown(KeyCode.Alpha5)) CreateResource(4);
 		if (Input.GetKeyDown(KeyCode.Alpha6)) CreateResource(5);
+
 	}
 
 	void CreateResource(int index)
 	{
-		if (ClosestWorkbench != null)
+		if (Input.GetKey(KeyCode.R))
+		{
+			Character.BaseInventory.DropResource(index);
+			ClearOnHand();
+		} 
+		else if (ClosestWorkbench != null)
 		{
 			Debug.Log($"WORKING ON {index}");
 			var resource = BuildManager.CreateItem(index, Character.BaseInventory.ResourcesInBag);
@@ -118,9 +169,11 @@ public class CharacterManager : MonoBehaviour
 			return;
 		}
 		else if (IsTool(index))
-		{ 
+		{
 			SelectedWeaponIndex = index;
 		}
+
+		
 	}
 
 	ResourceInBag GetCurrentTool()

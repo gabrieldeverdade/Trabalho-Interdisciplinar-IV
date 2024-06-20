@@ -8,6 +8,7 @@ public class Scenario
 	public IEnumerable<int> AttackersPoints { get; }
 	public int Resourcers { get; private set; }
 	public IEnumerable<int> ResourcersPoints { get; private set; }
+	public IEnumerable<Enemy> EnemiesList { get; private set; }
 
 	public Scenario(List<Enemy> enemies)
 	{
@@ -16,5 +17,6 @@ public class Scenario
 		ResourcersPoints = enemies.Where(c => !c.IsAttacker).Select(c => c.Points);
 		Attackers = Enemies - Resourcers;
 		AttackersPoints = enemies.Where(c => c.IsAttacker).Select(c => c.Points);
+		EnemiesList = enemies;
 	}
 }

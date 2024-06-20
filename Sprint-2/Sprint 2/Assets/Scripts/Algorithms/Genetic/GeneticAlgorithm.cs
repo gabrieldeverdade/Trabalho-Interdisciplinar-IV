@@ -18,20 +18,10 @@ public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 
 	public List<float[]> GenerateEpoch(IEnumerable<Scenario> scenario, int amountThatCanGenerate)
 	{
-		if (Epoch == 0) 
-		{
-			Epoch++;
-			Population = new List<float[]>();
+		if (Epoch == 0) return GenerateFirstEpoch(amountThatCanGenerate);
 
-			for (var i = 0; i < PopulationSize; i++)
-				Population.Add(Abiogenese());
-
-			return Population.Take(amountThatCanGenerate).ToList();
-		}
-
-		var member = new float[2] { 0.5f, 0.6f };
 		var newPopulation = new List<float[]>();
-		var elite = Population.OrderByDescending(x => Merit(scenario.First())).Take(20);
+		var elite = scenario.OrderByDescending(x => Merit(x)).SelectMany(sc => sc.EnemiesList).Select(c => c.Members).Take(20);
 
 		newPopulation.AddRange(elite);
 
@@ -47,8 +37,19 @@ public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 		return Population.Take(Mathf.Min(amountThatCanGenerate, PopulationSize)).ToList();
 	}
 
+	List<float[]> GenerateFirstEpoch(int amountThatCanGenerate)
+	{
+		Epoch++;
+		Population = new List<float[]>();
+
+		for (var i = 0; i < PopulationSize; i++)
+			Population.Add(Abiogenese());
+
+		return Population.Take(amountThatCanGenerate).ToList();
+	}
+
 	float[] Abiogenese() 
-		=> new float[2] { RandomGenerator.Generate(50, 100), RandomGenerator.Generate(0, 80) };
+		=> new float[2] { (float)RandomGenerator.GeneratePercentage(), (float)RandomGenerator.GeneratePercentage() };
 
 	float[] Sex(double shouldMutate, float[] A, float[] B) 
 	{
@@ -61,18 +62,7 @@ public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 	}
 
 	int Merit(Scenario scenario) 
-	{
-		//var beCollector = new DecisionTreeNode<double>(s => s.Resourcers > member[0])
-		//			.When(s => s.Resourcers > member[1], n => n.DecideValue(member[2] / 100, member[3] / 100))
-		//			.WhenNot(s => s.Attackers > member[4], n => n.DecideValue(member[5] / 100, member[6] / 100));
-
-		for (var i = 0; i < 100; i++)
-		{
-			//var enemyClass = beCollector.Decide(scenario) > RandomGenerator.GenerateDouble() ? "Colector" : "Atacker";
-			//Debug.Log($"Resources: {scenario.Resources} Collectors: {scenario.Colectors} Chance: {beCollector.Decide(scenario) * 100}% class: {enemyClass}");
-		}
-		return 0;
-	}
+		=> scenario.AttackersPoints.Sum() + scenario.ResourcersPoints.Sum();
 
 	public override string ToString()
 		=> $@"Generation: {Epoch}";

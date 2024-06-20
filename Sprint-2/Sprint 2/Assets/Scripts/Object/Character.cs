@@ -12,6 +12,10 @@ public class Character : MonoBehaviour
 	public bool IsPlayer = false;
 	public bool CanFly = false;
 
+	public float TimeToRegen { get; set; } = 0;
+
+	public int Points { get; set; } = 0;
+
 	public BaseTile ActiveTile;
 	public Vector2 Position;
 	public Vector2 PositionWithHeight => Position + (ActiveTile.Height * new Vector2(0, 0.25f));
@@ -25,15 +29,25 @@ public class Character : MonoBehaviour
 		BaseInventory = GetComponent<BaseInventory>();
 	}
 
+	private void Update()
+	{
+		TimeToRegen += Time.deltaTime;
+		if (TimeToRegen > 20)
+		{
+			TimeToRegen = 0;
+			CharacterAttributes.AddHealth(10);
+		}
+	}
+
 	public virtual void TakeHit(Character character)
 	{
-		if (!CharacterAttributes.TakeHitAndIsAlive(10, true, character))
+		if (!CharacterAttributes.TakeHitAndIsAlive(10, true))
 		{
 			if (IsPlayer)
 			{
 				Destroy(gameObject);
 				SceneManager.LoadScene(2);
-			} 
+			}
 			else
 			{
 				Destroy(gameObject);
@@ -74,6 +88,7 @@ public class Character : MonoBehaviour
 	public bool HasWorkbenchNearby()
 		=> ActiveTile != null && ActiveTile.Neighbours.Any(c => c.Value.WorkBench);
 
+	public BaseTile GetClosestWater(List<BaseTile> toIgnore) => GetClosest(c => c.Resourceable && c.Resource.Name == "Water", toIgnore);
 	public BaseTile GetClosestResource(List<BaseTile> toIgnore) => GetClosest(c => c.Resourceable, toIgnore);
 	public BaseTile GetClosestWorkbench() => GetClosest(c => c.WorkBench, new List<BaseTile>());
 
@@ -87,4 +102,13 @@ public class Character : MonoBehaviour
 
 		return null;
 	}
+
+	public void AddStamina(int amount)
+		=> CharacterAttributes.AddStamina(amount);
+
+	public bool ConsumeStamina(int amount)
+		=> CharacterAttributes.ConsumeStamina(amount);
+
+	public void UpdateStamina()
+		=> CharacterAttributes?.UpdateStamina();
 }

@@ -22,6 +22,12 @@ public class BaseInventory : MonoBehaviour
 		if (resourceInBag != null)
 			resourceInBag.Amount -= amount;
 	}
+
+	public void DropResource(int index)
+	{
+		if(ResourcesInBag.ElementAtOrDefault(index) != null)
+			ResourcesInBag.RemoveAt(index);
+	}
 }
 
 [Serializable]

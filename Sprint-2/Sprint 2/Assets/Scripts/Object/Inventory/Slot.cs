@@ -44,7 +44,7 @@ public class Slot : MonoBehaviour
 		else
 		{
 			var spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[1];
-			spriteRenderer.enabled = true;
+			spriteRenderer.enabled = false;
 		}
 
 		GetComponentsInChildren<SpriteRenderer>()[0].color = Selected ? Color.red : Color.white;
