@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -73,17 +74,17 @@ public class Character : MonoBehaviour
 	public bool HasWorkbenchNearby()
 		=> ActiveTile != null && ActiveTile.Neighbours.Any(c => c.Value.WorkBench);
 
-	public BaseTile GetClosestResource() => GetClosest(c => c.Resourceable);
-	public BaseTile GetClosestWorkbench() => GetClosest(c => c.WorkBench);
+	public BaseTile GetClosestResource(List<BaseTile> toIgnore) => GetClosest(c => c.Resourceable, toIgnore);
+	public BaseTile GetClosestWorkbench() => GetClosest(c => c.WorkBench, new List<BaseTile>());
 
-	public BaseTile GetClosest(Func<BaseTile, bool> condition)
+	public BaseTile GetClosest(Func<BaseTile, bool> condition, List<BaseTile> toIgnore)
 	{
 		if (!ActiveTile.Neighbours.Any()) return null;
 
-		var tile = ActiveTile.Neighbours.Values.FirstOrDefault(condition);
+		foreach (var tile in ActiveTile.Neighbours.Values)
+			if (condition(tile) && !toIgnore.Contains(tile))
+				return tile;
 
-		if (tile == null) return null;
-
-		return tile;
+		return null;
 	}
 }

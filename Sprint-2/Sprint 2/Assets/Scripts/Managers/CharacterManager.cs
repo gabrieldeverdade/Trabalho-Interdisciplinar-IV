@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class CharacterManager : MonoBehaviour
 	[SerializeField] BuildManager BuildManager;
 
 	public int SelectedWeaponIndex = -1;
+	public int LatestWeaponIndex = -2;
+	public BaseTile LatestTile;
 
 	private void Update()
 	{
@@ -23,8 +26,9 @@ public class CharacterManager : MonoBehaviour
 
 	void CheckWeaponOnHand()
 	{
-		if (IsTool(SelectedWeaponIndex))
+		if (IsTool(SelectedWeaponIndex) && LatestWeaponIndex != SelectedWeaponIndex)
 		{
+			LatestWeaponIndex = SelectedWeaponIndex;
 			var racketAttacker = GetComponentInChildren<RacketAttacker>();
 			var sprite = racketAttacker.GetComponentInChildren<SpriteRenderer>();
 
@@ -42,23 +46,35 @@ public class CharacterManager : MonoBehaviour
 
 		if (Character.HasResourceNearby())
 		{
-			ClosestResource = Character.GetClosestResource();
+			var closestResources = new List<BaseTile>();
+			var tool = GetCurrentTool();
 
-			if(ClosestResource )
-			ClosestResource.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-			ClosestResource.GetComponentsInChildren<Text>()[1].enabled = true;
+			if (tool == null) return;
+
+			for (int i = 0; i < 9; i++)
+			{
+				ClosestResource = Character.GetClosestResource(closestResources);
+
+				if (tool.Resource.CanGetResources && tool.Resource.GettableResources.Contains(ClosestResource.Resource))
+				{
+					ClosestResource.enabled = true;
+					ClosestResource.GetComponent<SpriteRenderer>().enabled = true;
+					ClosestResource.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+					break;
+				}
+
+				ClosestResource = null;
+				closestResources.Add(ClosestResource);
+			}
 		}
-		else
-			ClosestResource = null;
 
-		if (ClosestResource != null && Input.GetKeyDown(KeyCode.E))
+		if (ClosestResource != null && Input.GetKeyDown(KeyCode.Space))
 		{
 			Debug.Log("CONSUMING");
 			Character.BaseInventory.AddResource(ClosestResource.Resource, 1);
 		}
-
 	}
-
+	
 	void CheckWorkbench()
 	{
 		if (ClosestWorkbench != null)
@@ -107,11 +123,14 @@ public class CharacterManager : MonoBehaviour
 		}
 	}
 
+	ResourceInBag GetCurrentTool()
+		=> IsTool(SelectedWeaponIndex) ? Character.BaseInventory.ResourcesInBag.ElementAt(SelectedWeaponIndex) : null;
+
 	bool IsTool(int index)
 	{
-		if (index < 0) return false;
-
-		var resourceAtIndex = Character.BaseInventory.ResourcesInBag.ElementAt(index);
+		if (index < 0 || !Character.BaseInventory.ResourcesInBag.Any() || Character.BaseInventory.ResourcesInBag.ElementAtOrDefault(index) == null) return false;
+		
+		var resourceAtIndex =  Character.BaseInventory.ResourcesInBag.ElementAt(index);
 		return resourceAtIndex.Resource.CanHitEnemies || resourceAtIndex.Resource.CanGetResources;
 	}
 }

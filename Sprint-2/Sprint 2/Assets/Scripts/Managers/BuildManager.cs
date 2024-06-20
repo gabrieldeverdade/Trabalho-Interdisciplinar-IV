@@ -26,7 +26,7 @@ public class BuildManager : MonoBehaviour
 	{
 		var receipts = Receipts[index];
 		if(receipts == null) return null;
-
+		//TODO: arrumar para so tirar os tiles quando achar todos os resources
 		foreach(var receiptItem in receipts.Items)
 		{
 			var foundTile = bag.FirstOrDefault(c => c.Resource.Tile == receiptItem.Tile);
