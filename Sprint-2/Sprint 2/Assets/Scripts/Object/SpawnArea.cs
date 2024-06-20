@@ -17,12 +17,13 @@ public class SpawnArea: MonoBehaviour
 
 		if (tag == "Weapon")
 		{
-			var character = gameObject.GetComponentInParent<CharacterManager>();
+			var character = collision.GetComponentInParent<CharacterManager>();
 
 			if (character == null) return;
 
 			var weapon = character.GetCurrentWeapon();
 
+			Debug.Log(weapon);
 			if (weapon == null || !weapon.CanHitEnemies) return;
 
 			if (!GetComponent<CharacterAttributes>().TakeHitAndIsAlive(weapon.Attack, false))

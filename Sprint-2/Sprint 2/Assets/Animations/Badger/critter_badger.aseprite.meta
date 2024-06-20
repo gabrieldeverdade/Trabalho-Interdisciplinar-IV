@@ -1,0 +1,2239 @@
+fileFormatVersion: 2
+guid: d225c34c6b2d4a24a892176f81b72bdf
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: critter_badger_Frame_0
+    originalName: 
+    pivot: {x: 0.28, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 210
+      width: 25
+      height: 16
+    spriteID: 6db583cf377c2d74aa71aeb7375f4c5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 210}
+  - name: critter_badger_Frame_1
+    originalName: 
+    pivot: {x: 0.28, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 234
+      width: 25
+      height: 16
+    spriteID: 4927aa94a7f4dd248b7c17220321c206
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 234}
+  - name: critter_badger_Frame_2
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 451
+      width: 23
+      height: 15
+    spriteID: c2d44d7e419429040ab5ef11d7436f74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 451}
+  - name: critter_badger_Frame_3
+    originalName: 
+    pivot: {x: 0.36363634, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 307
+      width: 22
+      height: 16
+    spriteID: 54cf8b03e0621474bbc2f207c91a0a40
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 307}
+  - name: critter_badger_Frame_4
+    originalName: 
+    pivot: {x: 0.31578946, y: -0.875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 222
+      width: 19
+      height: 16
+    spriteID: 131f1a1076bba1e4f92da9f363ea7f22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 222}
+  - name: critter_badger_Frame_5
+    originalName: 
+    pivot: {x: 0.27777776, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 270
+      width: 18
+      height: 15
+    spriteID: 100d4c0e04a6dc349b21c355286ec247
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 270}
+  - name: critter_badger_Frame_6
+    originalName: 
+    pivot: {x: 0.26315784, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 246
+      width: 19
+      height: 16
+    spriteID: 540ea10010c940e40acd17a0ecc38ec4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 246}
+  - name: critter_badger_Frame_7
+    originalName: 
+    pivot: {x: 0.24999999, y: -0.61111116}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 158
+      width: 20
+      height: 18
+    spriteID: b6e4983dc9953c44daf475ef842c35b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 158}
+  - name: critter_badger_Frame_8
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.5555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 282
+      width: 22
+      height: 18
+    spriteID: f3ce9eb153d173b4897647b6c1dfc83d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 282}
+  - name: critter_badger_Frame_9
+    originalName: 
+    pivot: {x: 0.25, y: -0.64705884}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 137
+      width: 24
+      height: 17
+    spriteID: 4a00dbe118ba67c4782a771dcbf9d7ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 137}
+  - name: critter_badger_Frame_10
+    originalName: 
+    pivot: {x: 0.31818184, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 331
+      width: 22
+      height: 16
+    spriteID: bb8edf02d03392d43ba59095dd1994fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 331}
+  - name: critter_badger_Frame_11
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 474
+      width: 23
+      height: 15
+    spriteID: a92426477bd4f5a428fe8df1ffadeac8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 474}
+  - name: critter_badger_Frame_12
+    originalName: 
+    pivot: {x: 0.3333333, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 184
+      width: 24
+      height: 15
+    spriteID: 2c7c861981d47734a95b62528ea168ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 184}
+  - name: critter_badger_Frame_13
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 107
+      width: 23
+      height: 15
+    spriteID: 0efe88843066ab64b8138ad11dbf5879
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 107}
+  - name: critter_badger_Frame_14
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 130
+      width: 23
+      height: 15
+    spriteID: 2c50e088f132a2f4e95e74528322f495
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 130}
+  - name: critter_badger_Frame_15
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 62
+      width: 23
+      height: 16
+    spriteID: 567e87b8b0cdd4241b2081b353866d78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 62}
+  - name: critter_badger_Frame_16
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 86
+      width: 23
+      height: 16
+    spriteID: 942d14e1740a41543b26bb1497b35272
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 86}
+  - name: critter_badger_Frame_17
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 110
+      width: 23
+      height: 16
+    spriteID: c212970c6dc02c543b67846693a3f5b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 110}
+  - name: critter_badger_Frame_18
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 134
+      width: 23
+      height: 16
+    spriteID: e61a5dc464b18a146b4c9d9646f9f582
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 134}
+  - name: critter_badger_Frame_19
+    originalName: 
+    pivot: {x: 0.31818184, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 355
+      width: 22
+      height: 16
+    spriteID: 4ad345e95fe18e4489f6085d10ba492d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 355}
+  - name: critter_badger_Frame_20
+    originalName: 
+    pivot: {x: 0.31818184, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 379
+      width: 22
+      height: 16
+    spriteID: c68d9cd9b993b924885b08d11d54c7aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 379}
+  - name: critter_badger_Frame_21
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 176
+      width: 21
+      height: 16
+    spriteID: becbd513052d3484e8a03ab3567bcc44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 176}
+  - name: critter_badger_Frame_22
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 207
+      width: 21
+      height: 17
+    spriteID: 94dc6c4e5f27fc74898c7a783bc06fa9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 207}
+  - name: critter_badger_Frame_23
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 232
+      width: 21
+      height: 17
+    spriteID: 3d6cf97590df8574eb1fc1948313a6d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 232}
+  - name: critter_badger_Frame_24
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 257
+      width: 21
+      height: 17
+    spriteID: a3e8509ebfb71ff4790065aef4582b56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 257}
+  - name: critter_badger_Frame_25
+    originalName: 
+    pivot: {x: 0.2857143, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 282
+      width: 21
+      height: 17
+    spriteID: 4c663360558b8b74c84e6e415f3d0d6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 282}
+  - name: critter_badger_Frame_26
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 360
+      width: 22
+      height: 17
+    spriteID: c79679afe6f6f2f4ebd0db68be4536a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 360}
+  - name: critter_badger_Frame_27
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 385
+      width: 22
+      height: 17
+    spriteID: d7df4c6f9566d4143815fd4f01ecec3f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 385}
+  - name: critter_badger_Frame_28
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 410
+      width: 22
+      height: 17
+    spriteID: 0dec8862c895cce48a15eef86fd354da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 410}
+  - name: critter_badger_Frame_29
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 435
+      width: 22
+      height: 17
+    spriteID: 26680ea6a2c20f445a64dedd438eb4e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 435}
+  - name: critter_badger_Frame_30
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 460
+      width: 22
+      height: 17
+    spriteID: 294bd0207c027c4489fbce83a4066f7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 460}
+  - name: critter_badger_Frame_31
+    originalName: 
+    pivot: {x: 0.27272728, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 485
+      width: 22
+      height: 17
+    spriteID: 04ab7f74b9ae6b645b7063e3d7c9a279
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 485}
+  - name: critter_badger_Frame_32
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.38095242}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 33
+      width: 23
+      height: 21
+    spriteID: 3b6b8e8640071914abcc258d2cbf071b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 33}
+  - name: critter_badger_Frame_33
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.40000004}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 83
+      width: 23
+      height: 20
+    spriteID: 1132437abc95c144f922b3be0347cf95
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 83}
+  - name: critter_badger_Frame_34
+    originalName: 
+    pivot: {x: 0.43999997, y: -0.42105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 30
+      width: 25
+      height: 19
+    spriteID: ba623663bcdee2c4c9c34afe265aee39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 30}
+  - name: critter_badger_Frame_35
+    originalName: 
+    pivot: {x: 0.55172414, y: -0.36842102}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 392
+      width: 29
+      height: 19
+    spriteID: 6973c099cb6d1f54989bdf869c4164dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 392}
+  - name: critter_badger_Frame_36
+    originalName: 
+    pivot: {x: 0.6363636, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 256
+      width: 33
+      height: 19
+    spriteID: a752bba55170a484592a7ff90fc34865
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 256}
+  - name: critter_badger_Frame_37
+    originalName: 
+    pivot: {x: 0.6333334, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 419
+      width: 30
+      height: 18
+    spriteID: 122b97be6b2825f48b301200f0812c4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 419}
+  - name: critter_badger_Frame_38
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.4117647}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 445
+      width: 31
+      height: 17
+    spriteID: 0d0a59df733672346a1cc095dd81fb26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 445}
+  - name: critter_badger_Frame_39
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.46666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 187
+      width: 27
+      height: 15
+    spriteID: 5625de682a4c9744f8cf1905ed09b694
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 187}
+  - name: critter_badger_Frame_40
+    originalName: 
+    pivot: {x: 0.4230769, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 42
+      width: 26
+      height: 14
+    spriteID: 33b13c316a7f85c4f8edf537231659a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 42}
+  - name: critter_badger_Frame_41
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 200
+      width: 22
+      height: 14
+    spriteID: c0ea7b0aa908f444e8d7609b9cd59b1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 200}
+  - name: critter_badger_Frame_42
+    originalName: 
+    pivot: {x: 0.6296297, y: -0.5384615}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 64
+      width: 27
+      height: 13
+    spriteID: 42f30b1f9ffdccd49849a08b54615ea9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 64}
+  - name: critter_badger_Frame_43
+    originalName: 
+    pivot: {x: 0.625, y: -0.5833333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 496
+      width: 32
+      height: 12
+    spriteID: 03cb0e3ff5290f14b9d7ac8b25d061cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 496}
+  - name: critter_badger_Frame_44
+    originalName: 
+    pivot: {x: 0.5833334, y: -0.6363636}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 4
+      width: 36
+      height: 11
+    spriteID: 7872b1174c8f60c43ad9f21606c627ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 4}
+  - name: critter_badger_Frame_45
+    originalName: 
+    pivot: {x: 0.6, y: -0.6363636}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 23
+      width: 35
+      height: 11
+    spriteID: 8a6d4f387e83bd843b198d589e205551
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 23}
+  - name: critter_badger_Frame_46
+    originalName: 
+    pivot: {x: 0.48, y: -0.42857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 85
+      width: 25
+      height: 14
+    spriteID: be79f5c386da4664cb5e25f5f2cc2f97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 85}
+  - name: critter_badger_Frame_47
+    originalName: 
+    pivot: {x: 0.48, y: -0.3125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 258
+      width: 25
+      height: 16
+    spriteID: f5093deeb629a174fa3aa07add5f5d6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 258}
+  - name: critter_badger_Frame_48
+    originalName: 
+    pivot: {x: 0.5, y: -0.29411766}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 162
+      width: 24
+      height: 17
+    spriteID: b1547f7737677c74d99730659209365e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 162}
+  - name: critter_badger_Frame_49
+    originalName: 
+    pivot: {x: 0.5199999, y: -0.22222224}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 111
+      width: 25
+      height: 18
+    spriteID: e151f98c094278d4f831c7aae25e2bf4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 111}
+  - name: critter_badger_Frame_50
+    originalName: 
+    pivot: {x: 0.53846157, y: -0.22222224}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 57
+      width: 26
+      height: 18
+    spriteID: ea65589e625f51545955e5e91248f249
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 57}
+  - name: critter_badger_Frame_51
+    originalName: 
+    pivot: {x: 0.57142854, y: -0.22222224}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 470
+      width: 28
+      height: 18
+    spriteID: 983f7f0c762ef5d4bb99ba823d05afb0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 470}
+  - name: critter_badger_Frame_52
+    originalName: 
+    pivot: {x: 0.59259254, y: -0.22222224}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 4
+      width: 27
+      height: 18
+    spriteID: d3c2470a70b056c458531ef6a899fe07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 4}
+  - name: critter_badger_Frame_53
+    originalName: 
+    pivot: {x: 0.66666675, y: -0.45454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 497
+      width: 21
+      height: 11
+    spriteID: d02d8147e136a8d4db96d10520d91699
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 497}
+  - name: critter_badger_Frame_54
+    originalName: 
+    pivot: {x: 0.65, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 293
+      width: 20
+      height: 9
+    spriteID: 4ab6d0abc5db5054d86d9420937195eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 293}
+  - name: critter_badger_Frame_55
+    originalName: 
+    pivot: {x: 0.6315789, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 310
+      width: 19
+      height: 9
+    spriteID: 6727f539142a9ef44a4b8989fdc09f0d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 310}
+  - name: critter_badger_Frame_56
+    originalName: 
+    pivot: {x: 0.6111111, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 327
+      width: 18
+      height: 9
+    spriteID: 47689debcb3deb84ebe9ab4cd55e36c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 327}
+  - name: critter_badger_Frame_57
+    originalName: 
+    pivot: {x: 0.3529412, y: -0.23809524}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 72
+      width: 34
+      height: 21
+    spriteID: 8a26d725d2745244e8ea5a668e92c8a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 72}
+  - name: critter_badger_Frame_58
+    originalName: 
+    pivot: {x: 0.4193548, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 366
+      width: 31
+      height: 18
+    spriteID: 58a50a81c8854db489da00c5f4f15082
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 366}
+  - name: critter_badger_Frame_59
+    originalName: 
+    pivot: {x: 0.375, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 310
+      width: 32
+      height: 19
+    spriteID: 549c4c0c0475e8740a0d6466cb3ad007
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 310}
+  - name: critter_badger_Frame_60
+    originalName: 
+    pivot: {x: 0.36363637, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 283
+      width: 33
+      height: 19
+    spriteID: 2b1aed3a57366d24fbb698cbac0973ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 283}
+  - name: critter_badger_Frame_61
+    originalName: 
+    pivot: {x: 0.3529412, y: -0.23809524}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 101
+      width: 34
+      height: 21
+    spriteID: bf1bd464e1a6c28428c5f04178f8a62f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 101}
+  - name: critter_badger_Frame_62
+    originalName: 
+    pivot: {x: 0.3, y: -0.6315789}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 333
+      width: 20
+      height: 19
+    spriteID: f5e1c120fe46e0f48baaef432b6048bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 333}
+  - name: critter_badger_Frame_63
+    originalName: 
+    pivot: {x: 0.33333334, y: -0.52380955}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 337
+      width: 27
+      height: 21
+    spriteID: 4ae5799c64a3aaf4fa4adb5b3de27082
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 337}
+  - name: critter_badger_Frame_64
+    originalName: 
+    pivot: {x: 0.35714287, y: -0.39999998}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 130
+      width: 28
+      height: 25
+    spriteID: f17a0f9034f05344cbadc4c32f971870
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 130}
+  - name: critter_badger_Frame_65
+    originalName: 
+    pivot: {x: 0.36666664, y: -0.4347826}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 163
+      width: 30
+      height: 23
+    spriteID: 4674a8587057dc049bce032ec90f16e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 163}
+  - name: critter_badger_Frame_66
+    originalName: 
+    pivot: {x: 0.3235294, y: -0.35999998}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 34
+      height: 25
+    spriteID: 0296aed852a74c3468ba1296f738589b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: critter_badger_Frame_67
+    originalName: 
+    pivot: {x: 0.37931034, y: -0.25925925}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 37
+      width: 29
+      height: 27
+    spriteID: a02dd2779aa054f41bd192c3ccb4a99f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 37}
+  - name: critter_badger_Frame_68
+    originalName: 
+    pivot: {x: 0.34482762, y: -0.3043478}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 194
+      width: 29
+      height: 23
+    spriteID: a7f02a932bef5984dbd198a0158467ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 194}
+  - name: critter_badger_Frame_69
+    originalName: 
+    pivot: {x: 0.34482762, y: -0.3043478}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 225
+      width: 29
+      height: 23
+    spriteID: 1cf19d84c4562d246a3eb854de222271
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 225}
+  - name: critter_badger_Frame_70
+    originalName: 
+    pivot: {x: 0.2916667, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 4
+      width: 24
+      height: 21
+    spriteID: 811f0fefee171c746a7df583356c709c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 4}
+  - name: critter_badger_Frame_71
+    originalName: 
+    pivot: {x: 0.30434784, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 308
+      width: 23
+      height: 17
+    spriteID: b83334de8e0727248b24f7775c423a35
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 308}
+  - name: critter_badger_Frame_72
+    originalName: 
+    pivot: {x: 0.31818184, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 403
+      width: 22
+      height: 16
+    spriteID: bf85cb4bc22c04046afdd42f48de6d8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 403}
+  - name: critter_badger_Frame_73
+    originalName: 
+    pivot: {x: 0.34782606, y: -0.86666673}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 153
+      width: 23
+      height: 15
+    spriteID: 5cf2ef81f6fef7b4485e737b12290fc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 153}
+  - name: critter_badger_Frame_74
+    originalName: 
+    pivot: {x: 0.31818184, y: -0.8125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 46
+      y: 427
+      width: 22
+      height: 16
+    spriteID: d33f4c6ea4994974eafcf8b3bbfcf03e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 46, y: 427}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1426255697
+    name: critter_badger
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: critter_badger_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 17
+        y: 12
+        width: 25
+        height: 16
+      spriteId: 6db583cf377c2d74aa71aeb7375f4c5a
+    - name: critter_badger_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 17
+        y: 12
+        width: 25
+        height: 16
+      spriteId: 4927aa94a7f4dd248b7c17220321c206
+    - name: critter_badger_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 15
+      spriteId: c2d44d7e419429040ab5ef11d7436f74
+    - name: critter_badger_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 16
+        y: 13
+        width: 22
+        height: 16
+      spriteId: 54cf8b03e0621474bbc2f207c91a0a40
+    - name: critter_badger_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 18
+        y: 14
+        width: 19
+        height: 16
+      spriteId: 131f1a1076bba1e4f92da9f363ea7f22
+    - name: critter_badger_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 19
+        y: 15
+        width: 18
+        height: 15
+      spriteId: 100d4c0e04a6dc349b21c355286ec247
+    - name: critter_badger_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 19
+        y: 13
+        width: 19
+        height: 16
+      spriteId: 540ea10010c940e40acd17a0ecc38ec4
+    - name: critter_badger_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 19
+        y: 11
+        width: 20
+        height: 18
+      spriteId: b6e4983dc9953c44daf475ef842c35b9
+    - name: critter_badger_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 18
+        y: 10
+        width: 22
+        height: 18
+      spriteId: f3ce9eb153d173b4897647b6c1dfc83d
+    - name: critter_badger_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 18
+        y: 11
+        width: 24
+        height: 17
+      spriteId: 4a00dbe118ba67c4782a771dcbf9d7ca
+    - name: critter_badger_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 17
+        y: 13
+        width: 22
+        height: 16
+      spriteId: bb8edf02d03392d43ba59095dd1994fc
+    - name: critter_badger_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 15
+      spriteId: a92426477bd4f5a428fe8df1ffadeac8
+    - name: critter_badger_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 16
+        y: 13
+        width: 24
+        height: 15
+      spriteId: 2c7c861981d47734a95b62528ea168ba
+    - name: critter_badger_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 15
+      spriteId: 0efe88843066ab64b8138ad11dbf5879
+    - name: critter_badger_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 15
+      spriteId: 2c50e088f132a2f4e95e74528322f495
+    - name: critter_badger_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 16
+      spriteId: 567e87b8b0cdd4241b2081b353866d78
+    - name: critter_badger_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 16
+      spriteId: 942d14e1740a41543b26bb1497b35272
+    - name: critter_badger_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 16
+      spriteId: c212970c6dc02c543b67846693a3f5b9
+    - name: critter_badger_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 16
+      spriteId: e61a5dc464b18a146b4c9d9646f9f582
+    - name: critter_badger_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 17
+        y: 13
+        width: 22
+        height: 16
+      spriteId: 4ad345e95fe18e4489f6085d10ba492d
+    - name: critter_badger_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 17
+        y: 13
+        width: 22
+        height: 16
+      spriteId: c68d9cd9b993b924885b08d11d54c7aa
+    - name: critter_badger_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 18
+        y: 13
+        width: 21
+        height: 16
+      spriteId: becbd513052d3484e8a03ab3567bcc44
+    - name: critter_badger_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 18
+        y: 12
+        width: 21
+        height: 17
+      spriteId: 94dc6c4e5f27fc74898c7a783bc06fa9
+    - name: critter_badger_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 18
+        y: 12
+        width: 21
+        height: 17
+      spriteId: 3d6cf97590df8574eb1fc1948313a6d4
+    - name: critter_badger_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 18
+        y: 12
+        width: 21
+        height: 17
+      spriteId: a3e8509ebfb71ff4790065aef4582b56
+    - name: critter_badger_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 18
+        y: 12
+        width: 21
+        height: 17
+      spriteId: 4c663360558b8b74c84e6e415f3d0d6e
+    - name: critter_badger_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: c79679afe6f6f2f4ebd0db68be4536a1
+    - name: critter_badger_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: d7df4c6f9566d4143815fd4f01ecec3f
+    - name: critter_badger_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: 0dec8862c895cce48a15eef86fd354da
+    - name: critter_badger_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: 26680ea6a2c20f445a64dedd438eb4e2
+    - name: critter_badger_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: 294bd0207c027c4489fbce83a4066f7e
+    - name: critter_badger_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 18
+        y: 12
+        width: 22
+        height: 17
+      spriteId: 04ab7f74b9ae6b645b7063e3d7c9a279
+    - name: critter_badger_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 16
+        y: 8
+        width: 23
+        height: 21
+      spriteId: 3b6b8e8640071914abcc258d2cbf071b
+    - name: critter_badger_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 16
+        y: 8
+        width: 23
+        height: 20
+      spriteId: 1132437abc95c144f922b3be0347cf95
+    - name: critter_badger_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 13
+        y: 8
+        width: 25
+        height: 19
+      spriteId: ba623663bcdee2c4c9c34afe265aee39
+    - name: critter_badger_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 8
+        y: 7
+        width: 29
+        height: 19
+      spriteId: 6973c099cb6d1f54989bdf869c4164dd
+    - name: critter_badger_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 3
+        y: 6
+        width: 33
+        height: 19
+      spriteId: a752bba55170a484592a7ff90fc34865
+    - name: critter_badger_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 5
+        y: 6
+        width: 30
+        height: 18
+      spriteId: 122b97be6b2825f48b301200f0812c4e
+    - name: critter_badger_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 5
+        y: 7
+        width: 31
+        height: 17
+      spriteId: 0d0a59df733672346a1cc095dd81fb26
+    - name: critter_badger_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 12
+        y: 7
+        width: 27
+        height: 15
+      spriteId: 5625de682a4c9744f8cf1905ed09b694
+    - name: critter_badger_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 13
+        y: 7
+        width: 26
+        height: 14
+      spriteId: 33b13c316a7f85c4f8edf537231659a1
+    - name: critter_badger_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 12
+        y: 7
+        width: 22
+        height: 14
+      spriteId: c0ea7b0aa908f444e8d7609b9cd59b1a
+    - name: critter_badger_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 7
+        y: 7
+        width: 27
+        height: 13
+      spriteId: 42f30b1f9ffdccd49849a08b54615ea9
+    - name: critter_badger_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 4
+        y: 7
+        width: 32
+        height: 12
+      spriteId: 03cb0e3ff5290f14b9d7ac8b25d061cf
+    - name: critter_badger_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 3
+        y: 7
+        width: 36
+        height: 11
+      spriteId: 7872b1174c8f60c43ad9f21606c627ac
+    - name: critter_badger_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 3
+        y: 7
+        width: 35
+        height: 11
+      spriteId: 8a6d4f387e83bd843b198d589e205551
+    - name: critter_badger_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 12
+        y: 6
+        width: 25
+        height: 14
+      spriteId: be79f5c386da4664cb5e25f5f2cc2f97
+    - name: critter_badger_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 12
+        y: 5
+        width: 25
+        height: 16
+      spriteId: f5093deeb629a174fa3aa07add5f5d6a
+    - name: critter_badger_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 12
+        y: 5
+        width: 24
+        height: 17
+      spriteId: b1547f7737677c74d99730659209365e
+    - name: critter_badger_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 11
+        y: 4
+        width: 25
+        height: 18
+      spriteId: e151f98c094278d4f831c7aae25e2bf4
+    - name: critter_badger_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 10
+        y: 4
+        width: 26
+        height: 18
+      spriteId: ea65589e625f51545955e5e91248f249
+    - name: critter_badger_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 8
+        y: 4
+        width: 28
+        height: 18
+      spriteId: 983f7f0c762ef5d4bb99ba823d05afb0
+    - name: critter_badger_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 8
+        y: 4
+        width: 27
+        height: 18
+      spriteId: d3c2470a70b056c458531ef6a899fe07
+    - name: critter_badger_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 10
+        y: 5
+        width: 21
+        height: 11
+      spriteId: d02d8147e136a8d4db96d10520d91699
+    - name: critter_badger_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 11
+        y: 6
+        width: 20
+        height: 9
+      spriteId: 4ab6d0abc5db5054d86d9420937195eb
+    - name: critter_badger_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 12
+        y: 6
+        width: 19
+        height: 9
+      spriteId: 6727f539142a9ef44a4b8989fdc09f0d
+    - name: critter_badger_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 13
+        y: 6
+        width: 18
+        height: 9
+      spriteId: 47689debcb3deb84ebe9ab4cd55e36c0
+    - name: critter_badger_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 12
+        y: 5
+        width: 34
+        height: 21
+      spriteId: 8a26d725d2745244e8ea5a668e92c8a8
+    - name: critter_badger_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 11
+        y: 5
+        width: 31
+        height: 18
+      spriteId: 58a50a81c8854db489da00c5f4f15082
+    - name: critter_badger_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 12
+        y: 6
+        width: 32
+        height: 19
+      spriteId: 549c4c0c0475e8740a0d6466cb3ad007
+    - name: critter_badger_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 12
+        y: 6
+        width: 33
+        height: 19
+      spriteId: 2b1aed3a57366d24fbb698cbac0973ec
+    - name: critter_badger_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 12
+        y: 5
+        width: 34
+        height: 21
+      spriteId: bf1bd464e1a6c28428c5f04178f8a62f
+    - name: critter_badger_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 18
+        y: 12
+        width: 20
+        height: 19
+      spriteId: f5e1c120fe46e0f48baaef432b6048bc
+    - name: critter_badger_Frame_63
+      frameIndex: 63
+      cellRect:
+        x: 15
+        y: 11
+        width: 27
+        height: 21
+      spriteId: 4ae5799c64a3aaf4fa4adb5b3de27082
+    - name: critter_badger_Frame_64
+      frameIndex: 64
+      cellRect:
+        x: 14
+        y: 10
+        width: 28
+        height: 25
+      spriteId: f17a0f9034f05344cbadc4c32f971870
+    - name: critter_badger_Frame_65
+      frameIndex: 65
+      cellRect:
+        x: 13
+        y: 10
+        width: 30
+        height: 23
+      spriteId: 4674a8587057dc049bce032ec90f16e9
+    - name: critter_badger_Frame_66
+      frameIndex: 66
+      cellRect:
+        x: 13
+        y: 9
+        width: 34
+        height: 25
+      spriteId: 0296aed852a74c3468ba1296f738589b
+    - name: critter_badger_Frame_67
+      frameIndex: 67
+      cellRect:
+        x: 13
+        y: 7
+        width: 29
+        height: 27
+      spriteId: a02dd2779aa054f41bd192c3ccb4a99f
+    - name: critter_badger_Frame_68
+      frameIndex: 68
+      cellRect:
+        x: 14
+        y: 7
+        width: 29
+        height: 23
+      spriteId: a7f02a932bef5984dbd198a0158467ec
+    - name: critter_badger_Frame_69
+      frameIndex: 69
+      cellRect:
+        x: 14
+        y: 7
+        width: 29
+        height: 23
+      spriteId: 1cf19d84c4562d246a3eb854de222271
+    - name: critter_badger_Frame_70
+      frameIndex: 70
+      cellRect:
+        x: 17
+        y: 7
+        width: 24
+        height: 21
+      spriteId: 811f0fefee171c746a7df583356c709c
+    - name: critter_badger_Frame_71
+      frameIndex: 71
+      cellRect:
+        x: 17
+        y: 12
+        width: 23
+        height: 17
+      spriteId: b83334de8e0727248b24f7775c423a35
+    - name: critter_badger_Frame_72
+      frameIndex: 72
+      cellRect:
+        x: 17
+        y: 13
+        width: 22
+        height: 16
+      spriteId: bf85cb4bc22c04046afdd42f48de6d8a
+    - name: critter_badger_Frame_73
+      frameIndex: 73
+      cellRect:
+        x: 16
+        y: 13
+        width: 23
+        height: 15
+      spriteId: 5cf2ef81f6fef7b4485e737b12290fc3
+    - name: critter_badger_Frame_74
+      frameIndex: 74
+      cellRect:
+        x: 17
+        y: 13
+        width: 22
+        height: 16
+      spriteId: d33f4c6ea4994974eafcf8b3bbfcf03e
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 48, y: 48}

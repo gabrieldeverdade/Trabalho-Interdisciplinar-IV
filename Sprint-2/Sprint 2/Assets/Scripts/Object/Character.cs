@@ -39,9 +39,9 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	public virtual void TakeHit(Character character)
+	public virtual void TakeHit(Character character, int damage)
 	{
-		if (!CharacterAttributes.TakeHitAndIsAlive(10, true))
+		if (!CharacterAttributes.TakeHitAndIsAlive(damage, true))
 		{
 			if (IsPlayer)
 			{
@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
 	{
 		var tag = collision.gameObject.tag;
 		if (tag == "Enemy" && gameObject.tag == "Player")
-			TakeHit(collision.gameObject.GetComponent<Character>());
+			TakeHit(collision.gameObject.GetComponent<Character>(), 5);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +68,20 @@ public class Character : MonoBehaviour
 		var tag = collision.gameObject.tag;
 		var canUseWeapon = collision.gameObject.GetComponent<RacketAttacker>() != null && collision.gameObject.GetComponent<RacketAttacker>().IsRotating;
 		if (tag == "Weapon" && gameObject.tag == "Enemy" && canUseWeapon)
-			TakeHit(collision.gameObject.GetComponent<Character>());
+		{
+
+			var character = collision.GetComponentInParent<CharacterManager>();
+
+			if (character == null) return;
+
+			var weapon = character.GetCurrentWeapon();
+
+			Debug.Log(weapon);
+			if (weapon == null || !weapon.CanHitEnemies) return;
+
+			TakeHit(collision.gameObject.GetComponent<Character>(), weapon.Attack);
+
+		}
 	}
 
 	public void UpdatePosition(Vector2 position)

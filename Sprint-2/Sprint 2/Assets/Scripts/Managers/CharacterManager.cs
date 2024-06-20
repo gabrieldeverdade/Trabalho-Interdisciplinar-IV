@@ -30,8 +30,8 @@ public class CharacterManager : MonoBehaviour
 	}
 
 	public Resource GetCurrentWeapon()
-		=> Character.BaseInventory.ResourcesInBag.ElementAt(SelectedWeaponIndex).Resource;
-
+		=> Character.BaseInventory.ResourcesInBag.ElementAtOrDefault(SelectedWeaponIndex)? .Resource ?? null;
+	
 	void CheckWeaponOnHand()
 	{
 		if (IsTool(SelectedWeaponIndex) && LatestWeaponIndex != SelectedWeaponIndex)

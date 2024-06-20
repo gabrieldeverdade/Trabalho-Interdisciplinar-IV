@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 4120626768852860069}
   - component: {fileID: 1157184709278492729}
   - component: {fileID: 8198946301487233372}
+  - component: {fileID: 1933117203007201438}
   m_Layer: 8
   m_Name: GroundEnemySpawner
   m_TagString: Enemy
@@ -557,3 +558,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourcesInBag: []
+--- !u!114 &1933117203007201438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085883812801875032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fec1ef113114f6458c4f8e842271bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health:
+    Current: 250
+    Start: 250
+  Stamina:
+    Current: 200.4
+    Start: 200
+  IsDamaging: 0
+  JumpHeight: 1

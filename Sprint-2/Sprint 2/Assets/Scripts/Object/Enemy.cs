@@ -54,8 +54,8 @@ public class Enemy : Character
 	public bool CanWalk()
 		=> ResourceToWalk.ConsumeResource(ResourceToWalk.Resource, 10);
 
-	public override void TakeHit(Character character)
-		=> base.TakeHit(character);
+	public override void TakeHit(Character character, int damage)
+		=> base.TakeHit(character, damage);
 
 	public void HitCharacter()
 		=> AttakedPlayer();
