@@ -1,1 +1,41 @@
-
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Plague Apocalypse
+authors:
+  - family-names: D Ávila Rodrigues Bartholomeu
+    given-names: Bernardo 
+  - family-names: Machado Innecco Corrêa
+    given-names: Bruno
+  - family-names: de Souza Coelho
+    given-names: Carlos Vinícius 
+  - family-names: Azevedo Fernandes
+    given-names: Gabriel
+  - family-names: de Ávila Pedersoli Rocha
+    given-names: Giovanna
+  - family-names: Fisher de Paula Lopes
+    given-names: Higor
+  - family-names: de Moura Teramatsu
+    given-names: João Victor
+  - family-names: Moreira
+    given-names: Pedro Henrique
+  - name-sufix: Professor
+    affiliation: PUC Minas
+    family-names: Martins Mol
+    given-names: Artur
+  - name-sufix: Professor
+    affiliation: PUC Minas
+    family-names: Neri Nobre
+    given-names: Cristiane
+  - name-sufix: Professor
+    affiliation: PUC Minas
+    family-names: Ribeiro da Mota
+    given-names: Rosilane
+keywords:
+  - Jogos
+  - Grafos
+  - Inteligência Artificial
+  - Unity
+repository-code: https://github.com/gabrieldeverdade/Trabalho-Interdisciplinar-IV
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2024-06-21
