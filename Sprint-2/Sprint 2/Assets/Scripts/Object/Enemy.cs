@@ -79,7 +79,8 @@ public class Enemy : Character
 	public void SetJob(SpawnArea spawn, float[] members)
 	{
 		Members = members;
-		IsAttacker = new UnityRandomGenerator().GenerateDouble() > members[0];
+		IsAttacker = true;
+		//IsAttacker = new UnityRandomGenerator().GenerateDouble() > members[0];;
 		CanChangeToAttacker = new UnityRandomGenerator().GenerateDouble() > members[1];
 		Spawn = spawn;
 		Points = 0;

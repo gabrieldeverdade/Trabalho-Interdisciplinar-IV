@@ -3,11 +3,13 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
 	public Animator Animator;
+	public AudioSource AudioSource;
 	public Direction CurrentDirection;
 
 	public void Start()
 	{
 		Animator = GetComponentInChildren<Animator>();
+		AudioSource = GetComponentInChildren<AudioSource>();
 	}
 
 	public void Play(string animationName)
@@ -31,5 +33,15 @@ public class PlayerAnimation : MonoBehaviour
 			? DirectionManager.GetIdleAnimation(CurrentDirection)
 			: DirectionManager.GetWalkAnimation(CurrentDirection)
 		);
+
+		if(direction.magnitude >= 0.001)
+		{
+			Play(DirectionManager.GetWalkAnimation(CurrentDirection));
+			AudioSource.time = 0;
+			AudioSource.Play();
+		}
+		else
+			Play(DirectionManager.GetIdleAnimation(CurrentDirection));
+
 	}
 }

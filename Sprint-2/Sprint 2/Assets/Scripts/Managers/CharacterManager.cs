@@ -67,8 +67,10 @@ public class CharacterManager : MonoBehaviour
 				ClosestWater.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 			}
 		} 
-		else
+		else if (ClosestWater != null)
 		{
+			ClosestWater.enabled = false;
+			ClosestWater.GetComponent<SpriteRenderer>().enabled = false;
 			ClosestWater = null;
 		}
 

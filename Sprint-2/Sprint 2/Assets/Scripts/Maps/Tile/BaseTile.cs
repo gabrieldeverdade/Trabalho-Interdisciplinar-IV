@@ -37,11 +37,13 @@ public abstract class BaseTile : MonoBehaviour
 
 	public void ShowTile()
 	{
+		gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1, 0.7f);
 	}
 
 	public void HideTile()
 	{
+		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
 	}
 

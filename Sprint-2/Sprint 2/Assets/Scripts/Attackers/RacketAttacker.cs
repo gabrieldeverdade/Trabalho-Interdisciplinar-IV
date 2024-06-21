@@ -31,6 +31,8 @@ public class RacketAttacker : MonoBehaviour
 
 	void Update()
 	{
+		if (GetComponentInParent<CharacterManager>().GetCurrentWeapon() == null) return;
+
 		if(LatestDirection != PlayerAnimation.CurrentDirection && !IsRotating)
 		{
 			LatestDirection = PlayerAnimation.CurrentDirection;
@@ -45,6 +47,8 @@ public class RacketAttacker : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && !IsRotating)
 		{
 			IsRotatingTowards = true;
+			GetComponent<AudioSource>().time = 0;
+			GetComponent<AudioSource>().Play();
 			RotationDirection = GetStrikeRotationAmount() < 0 ? -1 : 1;
 			CurrentRotation = 0;
 		}

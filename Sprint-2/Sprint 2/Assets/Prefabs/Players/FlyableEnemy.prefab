@@ -286,18 +286,18 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ce9f421f6f502b4a90e8da79cc8d9fb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.014
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.003
+  m_Pitch: 3
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
-  DopplerLevel: 0.57
-  MinDistance: 0.1
-  MaxDistance: 1
-  Pan2D: 0
-  rolloffMode: 0
+  Priority: 178
+  DopplerLevel: 1.66
+  MinDistance: 0.5
+  MaxDistance: 3
+  Pan2D: -0.031
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -330,7 +330,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.673
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -345,7 +345,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.044444446
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
+  AudioSource: {fileID: 0}
   CurrentDirection: 0
 --- !u!114 &5327952012903291034
 MonoBehaviour:
