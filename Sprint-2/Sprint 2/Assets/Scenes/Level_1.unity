@@ -979,7 +979,7 @@ PrefabInstance:
     - target: {fileID: 8264350730961744621, guid: 18360661f5aae41409ec07ef6f151d53, type: 3}
       propertyPath: ResourcesInBag.Array.data[0].Resource
       value: 
-      objectReference: {fileID: 11400000, guid: 0d08b590157008942b3beae7d92768dc, type: 2}
+      objectReference: {fileID: 11400000, guid: 831e15279f833bf4da4b1382bb067bdd, type: 2}
     - target: {fileID: 8893561616709570802, guid: 18360661f5aae41409ec07ef6f151d53, type: 3}
       propertyPath: CharacterManager
       value: 
@@ -990,11 +990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058815912718903938, guid: 18360661f5aae41409ec07ef6f151d53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.63
+      value: -8.78
       objectReference: {fileID: 0}
     - target: {fileID: 9058815912718903938, guid: 18360661f5aae41409ec07ef6f151d53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.9
+      value: -1.61
       objectReference: {fileID: 0}
     - target: {fileID: 9063023735048227642, guid: 18360661f5aae41409ec07ef6f151d53, type: 3}
       propertyPath: m_IsActive

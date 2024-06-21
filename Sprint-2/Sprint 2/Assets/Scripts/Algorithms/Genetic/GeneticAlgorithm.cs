@@ -2,13 +2,6 @@
 using System.Linq;
 using UnityEngine;
 
-
-enum EnemyVariables
-{
-	PercentageToBeAttacker = 0,
-	PercentageToTransformToBeAttacker = 0,
-}
-
 public class GeneticAlgorithm : SingletonMonoBehaviour<GeneticAlgorithm>
 {
 	[SerializeField] int Epoch = 0;
